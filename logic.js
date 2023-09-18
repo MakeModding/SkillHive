@@ -14,9 +14,9 @@ const SkillLines = [
 const pageTabs = ["ACTIVE_ABILITIES", "PASSIVE_ABILITIES", "BUILDS", "STATS"];
 const Pages = ["Active", "Passive", "Build", "Stat"];
 const StatPresets = [
-    "50-16060-2322-2310-5000-38.13-164.21-7.41-7.41-0-0",
+    "50-16060-2322-2310-5000-38.13-164.21-7.41-5.17-0-0",
     "50-16060-2322-2310-5000-5.80-60.67-45.65-34.44-0-100",
-    "50-16060-2322-2310-5000-38.13-172.71-7.41-7.41-100-0"
+    "50-16060-2322-2310-5000-45.6-172.71-7.41-5.17-100-0"
 ];
 const svg_ns = 'http://www.w3.org/2000/svg';
 const StatNames = ["Level", "Power Rating", "Base Attack", "Base Heal", "Weapon Power", "Crit %", "Crit power %", "Glance %", "Evade %", "Heal Alloc", "Tank Alloc"];
