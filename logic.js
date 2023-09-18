@@ -352,6 +352,7 @@ function ApplyUrl() {
     for (let param of urlParams) {
         let key = param[0];
         let value = param[1];
+        if(value == "null") continue;
         if (key == "b") {
             let abilities = SplitAbilities(value);
             for (let i = 0; i < abilities.length; i++) {
@@ -1186,7 +1187,7 @@ function Hook() {
                 setTimeout(() => {
                     loadButton.setAttribute("class", "");
                 }, 750);
-            } 
+            }
             let buffs = localStorage.getItem(slotName + "Buffs");
             if (buffs) {
                 changed = true;
