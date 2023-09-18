@@ -1,0 +1,298 @@
+body {
+	background: rgb(30, 30, 30) center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(20,20,20)' viewBox='0 0 100 169.5'%3E%3Cpolygon points='50,34.75 93.5,59.75 93.5,109.75 50,134.75 6.5,109.75 6.5,59.75'%3E%3C/polygon%3E%3Cpolygon points='0,-50 43.5,-25 43.5,25 0,50 -43.5,25 -43.5,-25'%3E%3C/polygon%3E%3Cpolygon points='100,-50 143.5,-25 143.5,25 100,50 56.5,25 56.5,-25'%3E%3C/polygon%3E%3Cpolygon points='0,119.5 43.5,144.5 43.5,194.5 0,219.5 -43.5,194.5 -43.5,144.5'%3E%3C/polygon%3E%3Cpolygon points='100,119.5 143.5,144.5 143.5,194.5 100,219.5 56.5,194.5 56.5,144.5'%3E%3C/polygon%3E%3C/svg%3E");
+	background-size: 16px;
+}
+
+#tooltip {
+    border-radius: 10px;
+    background: rgb(29,29,29);
+    background: linear-gradient(180deg, rgba(29,29,29,1) 35%, rgba(75,75,76,1) 100%);
+    border: 3px solid #ffffff;
+    margin: 0px;
+    padding:0px;
+}
+
+#tooltiptitlebg{
+    padding: 0px 2px 20px 0px;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 3px,
+        rgba(0, 0, 0, 0.1) 3px,
+        rgba(0, 0, 0, 0.3) 6px
+    )
+}
+
+hr {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px 5px 0px 5px;
+}
+
+#tooltiptitle{
+    font-family: "Futura Heavy";
+    font-size: 16px;
+    text-align: left;
+    color: white;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin: 0px;
+}
+
+#tooltipsubtitle{
+    font-family: "Futura Thin";
+    font-size: 13px;
+    text-align: left;
+    color: white;
+    padding-left: 10px;
+    margin: 0px;
+    padding-bottom: 0px;
+}
+
+#tooltipdescription {
+    font-family: "Futura MDBk";
+    font-size: 11px;
+    text-align: left;
+    color: white;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    margin: 0px;
+    width: 300px;
+}
+
+#Skillhive  {
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+    margin-top: 2em;
+    width: 1280px;
+    height: 800px;
+}
+
+.conflict {
+    animation-name: blink;
+    animation-duration: 0.75s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse;
+}
+
+.apply {
+    animation-name: blink;
+    animation-duration: 0.75s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@font-face {
+    font-family:"Futura MDBk";
+    src: url("fonts/FuturaMDBk.ttf");
+}
+
+@font-face {
+    font-family:"Futura MD BT";
+    src: url("fonts/FuturaMD_BT.ttf");
+}
+
+@font-face {
+    font-family:"Futura";
+    src: url("fonts/Futura.ttf");
+}
+
+@font-face {
+    font-family: "Futura MD";
+    src: url("fonts/FuturaMD_BT.ttf");
+}
+
+@font-face {
+    font-family: "Futura Heavy";
+    src: url("fonts/Futura Heavy Regular.otf");
+}
+
+
+#Exports {
+    padding-bottom: 5em;
+    margin: 0 auto;
+}
+#Exports * {
+    font-family: "Futura";
+    font-size: 20px;
+    text-align: center;
+}
+#Exports p {
+    color: white;
+    margin:0;
+    padding: 0;
+}
+#Exports textarea {
+    display: block;
+    color: black;
+    width: 800px;
+    height: 100px;
+    word-wrap:break-word;
+    margin: 0 auto;
+}
+
+#Exports button {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+
+#Exports label {
+    color: white;
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+
+#exportName {
+    display: block;
+    color: black;
+    width: 130px;
+    margin: 0 auto;
+}
+#Exports code{
+    color: black;
+    background-color: gray;
+    padding: 2px;
+}
+#ManagerUrl, #ManagerShareUrl {
+    height: 200px;
+}
+
+image {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#Build input, #StatSlots input {
+    font-family: "Futura";
+    font-size: 20px;
+    color: white;
+    background-color:rgb(255, 255, 255, 0.1);
+    text-transform:uppercase;
+    border: 0px;
+    
+}
+#Attributes input {
+    font-family: "Futura";
+    font-size: 27px;
+    color: white;
+    background-color:rgb(255, 255, 255, 0.1);
+    border: 0px;
+    outline: none;
+}
+
+#WeaponBuffs input {
+    font-family: "Futura";
+    font-size: 8px;
+    color: white;
+    background-color:rgb(255, 255, 255, 0.1);
+    outline: none;
+    border: 0px;
+}
+
+text {
+    font-family: "Futura";
+    user-select: none;
+}
+
+#Cell0Name tspan, 
+#Cell1Name tspan, 
+#Cell2Name tspan {
+    font-family: "Futura Heavy";
+    font-size: 20px;
+}
+
+#DetailDescription * {
+    font-family: "Futura MD";
+    font-size: 13px;
+    fill: white;
+    user-select:auto;
+}
+#DetailDescription tspan[style="font-style: italic;"]{
+    fill: #faf9db;
+}
+
+.disabledTab * {
+    fill-opacity: 40%;
+}
+
+#Link tspan {
+    user-select:all;
+}
+
+#DetailName text{
+    user-select:auto;
+    font-family: "Futura MDBk";
+    font-size: 21px;
+    fill: white;
+}
+
+#DetailAbilityType * {
+    font-family: "Futura";
+    font-size: 12px;
+    fill: white;
+}
+
+#DetailCastTime *, 
+#DetailRecastTime * {
+    font-family: "Futura MDBk";
+    font-size: 12px;
+    fill: white;
+}
+
+tspan[color="#FF6600"] {
+    fill: #FF6600!important;
+}
+tspan[color="#00FF33"] {
+    fill: #00FF33!important;
+}
+tspan[color="#FF3D3D"] {
+    fill: #FF3D3D!important;
+}
+tspan[color="#DDDDDD"] {
+    fill: #c0c0c0!important;
+}
+.Passive text {
+    font-family: "Futura MDBk";
+    font-size: 13px;
+    fill: #E99DE5;
+}
+.Builder text {
+    font-family: "Futura";
+    font-size: 14px;
+    fill: white;
+}
+.Consumer text{
+    font-family: "Futura";
+    font-size: 14px;
+    fill: #DD6666;
+}
+.Magic text{
+    font-family: "Futura";
+    font-size: 14px;
+    fill: #9393E7;
+}
+.Elite text{
+    font-family: "Futura";
+    font-size: 14px;
+    fill: #F7E770;
+}
