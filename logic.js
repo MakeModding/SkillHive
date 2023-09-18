@@ -1159,9 +1159,14 @@ function Hook() {
         let saveButton = statSlot.querySelector("[id^=SaveButton]")
         saveButton.onclick = function () {
             var url = new window.URL(document.location);
-            localStorage.setItem(slotName + "Name", encodeURIComponent(txt.value));
-            localStorage.setItem(slotName + "Stats", encodeURIComponent(url.searchParams.get('s')));
-            localStorage.setItem(slotName + "Buffs", encodeURIComponent(url.searchParams.get('a')));
+            let name = encodeURIComponent(txt.value);
+            if (name) localStorage.setItem(slotName + "Name", name);
+            let stats = encodeURIComponent(url.searchParams.get('s'));
+            if (stats) localStorage.setItem(slotName + "Stats", stats);
+            else localStorage.removeItem(slotName + "Stats");
+            let buffs = encodeURIComponent(url.searchParams.get('a'));
+            if (buffs) localStorage.setItem(slotName + "Buffs", buffs);
+            else localStorage.removeItem(slotName + "Buffs");
             saveButton.setAttribute("class", "apply");
             setTimeout(() => {
                 saveButton.setAttribute("class", "");
@@ -1181,7 +1186,7 @@ function Hook() {
                 setTimeout(() => {
                     loadButton.setAttribute("class", "");
                 }, 750);
-            }
+            } 
             let buffs = localStorage.getItem(slotName + "Buffs");
             if (buffs) {
                 changed = true;
@@ -1193,11 +1198,11 @@ function Hook() {
                     loadButton.setAttribute("class", "");
                 }, 750);
             }
-
             if (changed) ApplyUrl();
         }
         let deletebutton = statSlot.querySelector("[id^=DeleteButton]")
         deletebutton.onclick = function () {
+            localStorage.removeItem(slotName + "Buffs");
             localStorage.removeItem(slotName + "Stats");
             localStorage.removeItem(slotName + "Name");
             txt.value = "Stats " + (i + 1);
