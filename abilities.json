@@ -5988,7 +5988,7 @@
             "Params": [
                 "0.740*${s.CombatPower}+0.740*${s.CombatPower}*${s.RifleAll}+0.740*${s.CombatPower}*${s.RiflePower}",
                 "2.960*${s.HealPower}+2.960*${s.HealPower}*${s.RifleAll}+2.960*${s.HealPower}*${s.RiflePower}",
-                "(1.263*${s.LeechPower}+1.263*${s.LeechPower}*${s.RifleAll}+1.263*${s.LeechPower}*${s.RiflePower}/100*100)",
+                "((1.263*${s.LeechPower}+1.263*${s.LeechPower}*${s.RifleAll}+1.263*${s.LeechPower}*${s.RiflePower})/100)*100",
                 "3.700*${s.HealPower}+3.700*${s.HealPower}*${s.RifleAll}+3.700*${s.HealPower}*${s.RiflePower}"
             ],
             "Weapon": "Rifle",
@@ -6097,7 +6097,7 @@
             "Params": [
                 "0.803*${s.CombatPower}+0.803*${s.CombatPower}*${s.RifleAll}+0.803*${s.CombatPower}*${s.RiflePower}",
                 "2.408*${s.HealPower}+2.408*${s.HealPower}*${s.RifleAll}+2.408*${s.HealPower}*${s.RiflePower}",
-                "(0.103*${s.LeechPower}/100*100)",
+                "((0.103*${s.LeechPower})/100*100)",
                 "4.012*${s.HealPower}+4.012*${s.HealPower}*${s.RifleAll}+4.012*${s.HealPower}*${s.RiflePower}"
             ],
             "Weapon": "Rifle",
@@ -6305,7 +6305,7 @@
             "Name": "Reap Essence",
             "Description": "\"Unveil Essence\" reveals even more energy for your allies to reap. Whenever an attack critically hits a target affected by your \"Unveil Essence\" the attacker is instead healed for <font color='#00FF33'>%0.1f% </font> of the damage they dealt.",
             "Params": [
-                "(0.225*${s.LeechPower}/100*100)"
+                "((0.225*${s.LeechPower})/100*100)"
             ],
             "Weapon": "Rifle",
             "Type": "Passive",

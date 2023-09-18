@@ -686,7 +686,7 @@ function UpdateStats() {
 
     Stats["CombatPower"] = 0.075 * (Stats["AttackProfiency"] + Stats["WeaponPower"]);
     Stats["HealPower"] = 0.02 * (Stats["HealProfiency"] + Stats["WeaponPower"]);
-    Stats["LeechPower"] = Stats["HealPower"] * 0.13333333;
+    Stats["LeechPower"] = Stats["HealPower"] / 7.5;
     Stats["CritChanceHeal"] = 0;
     Stats["CritDamageRating"] = 0;
 
