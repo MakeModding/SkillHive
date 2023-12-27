@@ -25,13 +25,13 @@ const StatTooltips = [
     "Sum of Power Ratings from equipped items\nDefault:0\nE17: 16060",
     "Attack rating from SP/Capstone/Agent/Potions.\n2322+Agents+Potions with all SP/Capstones.\nDefault: 2322",
     "Heal rating from SP/Capstone/Agent/Potions.\n2310+Agents+Potions with all SP/Capstones.\nDefault: 2310",
-    "Weapon power of the equipped weapon.\nDefault:0\nE17: 16060",
-    "Critical % from character sheet.\nOptional\nDefault: 5.8%",
-    "Critical damage % from character sheet\nOptional\nDefault: 60.7%",
-    "Glance % from character sheet.\nOptional\nDefault: 7.4%",
-    "Evade % from character sheet.\nOptional\nDefault: 5.2%",
-    "Heal anima allocation.\n0-100.\nOptional\nDefault: 0",
-    "Tank anima allocation.\n0-100.\nOptional\nDefault: 0",
+    "Weapon power of the equipped weapon.\nDefault:0\nE17: 5000",
+    "Critical % from character sheet.\nOptional, only used for few healing skills\nDefault: 5.8%",
+    "Critical damage % from character sheet\nOptional, only used for few healing skills\nDefault: 60.7%",
+    "Glance % from character sheet.\nOptional, only used for few tanking skills\nDefault: 7.4%",
+    "Evade % from character sheet.\nOptional, only used for few tanking skills\nDefault: 5.2%",
+    "Heal anima allocation.\n0-100.\nDefault: 0",
+    "Tank anima allocation.\n0-100.\nDefault: 0",
 ];
 const DamageTypes = ["Power", "Basic", "Elite", "All"];
 const ParamRegex = new RegExp(/.*?(%[a-zA-Z0]\.{0,1}[0-9]{0,1}f{0,1}).*?/g)
