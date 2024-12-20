@@ -1,60 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="SecretFox" name="author" />
     <title>SkillHive</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <link rel="icon" href="images/honeycomb.svg">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-</head>
+    <link rel="icon" href="images/honeycomb.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/12.1.0/highcharts.js"
+      integrity="sha512-m5Abp5HGu0ur86H1Kcbvy9Nm0r+/ugxZ1opmlSoM4YsAfM50PK1fLDe+ew/uyQzNoOXcvOrrVJZ6TxequqBNFw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
 
-<body>
-    <div id="tooltip" style="position: fixed;display:none;">
-        <div id="tooltipcontent">
-            <div id="tooltiptitlebg">
-                <p id="tooltiptitle"></p>
-                <p id="tooltipsubtitle"></p>
-            </div>
-            <hr>
-            <p id ="tooltipdescription">test</p>
+  <body>
+    <div id="tooltip" style="position: fixed; display: none">
+      <div id="tooltipcontent">
+        <div id="tooltiptitlebg">
+          <p id="tooltiptitle"></p>
+          <p id="tooltipsubtitle"></p>
         </div>
+        <hr />
+        <p id="tooltipdescription">test</p>
+      </div>
     </div>
-    <div id="content" style="display:none">
-        <svg id="Skillhive"></svg>
-        <div id="Exports">
-            <p>Web:</p>
-            <label for="checkboxStats">
-                <input type="checkbox" id="checkboxStats" onclick="SetExports()"> Include stats
-            </label>
-            <textarea id="BuildUrl" spellcheck=false tabindex="-1"></textarea>
-            <p>BooBuilds:</p>
-            <textarea id="BooUrl" spellcheck=false tabindex="-1"></textarea>
-            <br><br>
-            <p>Build Manager (Self)</p>
-            <input id="exportName" oninput="SetExports()" spellcheck=false value="Buildname" tabindex="-1" autocomplete="off"></input>
-            <textarea id="ManagerUrl" spellcheck=false tabindex="-1"></textarea>
-            <button type="button" onclick="DownloadBuild(0)">Download</button>
-            <p>Build Manager (Share)</p>
-            <textarea id="ManagerShareUrl" spellcheck=false tabindex="-1"></textarea>
-            <button type="button" onclick="DownloadBuild(1)">Download</button>
-            <br>
-            <p>Build manager links can be saved to <code>Secret World Legends\Scripts</code> folder.<br>Use \&lt;filename&gt; in-game to link build in current chat</p>
-            <p>Self version is only visible for you<br>If you are copy pasting the text make sure everything is on one line</p>
-        </div>
+    <div id="content" style="display: none">
+      <svg id="Skillhive"></svg>
+      <div id="Exports">
+        <p>Web:</p>
+        <label for="checkboxStats">
+          <input type="checkbox" id="checkboxStats" onclick="SetExports()" />
+          Include stats
+        </label>
+        <textarea id="BuildUrl" spellcheck="false" tabindex="-1"></textarea>
+        <p>BooBuilds:</p>
+        <textarea id="BooUrl" spellcheck="false" tabindex="-1"></textarea>
+        <br /><br />
+        <p>Build Manager (Self)</p>
+        <input
+          id="exportName"
+          oninput="SetExports()"
+          spellcheck="false"
+          value="Buildname"
+          tabindex="-1"
+          autocomplete="off"
+        />
+        <textarea id="ManagerUrl" spellcheck="false" tabindex="-1"></textarea>
+        <button type="button" onclick="DownloadBuild(0)">Download</button>
+        <p>Build Manager (Share)</p>
+        <textarea
+          id="ManagerShareUrl"
+          spellcheck="false"
+          tabindex="-1"
+        ></textarea>
+        <button type="button" onclick="DownloadBuild(1)">Download</button>
+        <br />
+        <p>
+          Build manager links can be saved to
+          <code>Secret World Legends\Scripts</code> folder.<br />Use
+          \&lt;filename&gt; in-game to link build in current chat
+        </p>
+        <p>
+          Self version is only visible for you<br />If you are copy pasting the
+          text make sure everything is on one line
+        </p>
+      </div>
     </div>
 
-    <script src="logic.js"></script> 
+    <script src="logic.js"></script>
     <script>
-        function init(svg) {
-            Hook();
-        }
-        $(document).ready(function() {
-            $('#Skillhive').load('skillhive.svg', init);
-        });
+      function init(svg) {
+        Hook();
+      }
+      $(document).ready(function () {
+        $("#Skillhive").load("skillhive.svg", init);
+      });
     </script>
-</body>
+  </body>
 </html>
