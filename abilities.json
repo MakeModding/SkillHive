@@ -5,8 +5,8 @@
             "Name": "Tsunami",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>2.5 </font> seconds.<br><br>Consumes <font color='#FF6600'>5 </font> Blade Energy.<br>Move as an unrelenting tsunami, drowning your target under the waves of your attacks, each dealing <font color='#FF3D3D'>%0.0f </font> physical damage. While channeling, your movement speed is increased by <font color='#FF6600'>20% </font>, and if your channel is interrupted you are refunded any unused energy.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "1.038*${s.CombatPower}+1.038*${s.CombatPower}*${s.BladeAll}+1.038*${s.CombatPower}*${s.BladePower}",
-                "1.419*${s.CombatPower}+1.419*${s.CombatPower}*${s.BladeAll}"
+                "1.038*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladePower})",
+                "1.419*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -44,8 +44,8 @@
             "Name": "Rushing River",
             "Description": "<b><i>Column Dash:</i></b> Dash forward <font color='#FF6600'>10 </font> metres, affecting up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>6 </font> metre wide column along the way.<br><br>Consumes <font color='#FF6600'>2 </font> Blade Energy.<br>Rush through your enemies like the raging rapids dealing <font color='#FF3D3D'>%0.0f </font> physical damage and slowing their movement. Applies <i>Exposed</i>.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "1.350*${s.CombatPower}+1.350*${s.CombatPower}*${s.BladeAll}+1.350*${s.CombatPower}*${s.AoE}",
-                "0.832*${s.CombatPower}+0.832*${s.CombatPower}*${s.BladeAll}"
+                "1.350*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.AoE})",
+                "0.832*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -65,8 +65,8 @@
             "Name": "Flowing Strike",
             "Description": "Your blade moves like flowing water, striking your target for <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Requires a Blade in your Primary Weapon slot.",
             "Params": [
-                "1.175*${s.CombatPower}+1.175*${s.CombatPower}*${s.BladeAll}+1.175*${s.CombatPower}*${s.BladeBasic}",
-                "0.832*${s.CombatPower}+0.832*${s.CombatPower}*${s.BladeAll}"
+                "1.175*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladeBasic})",
+                "0.832*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -86,9 +86,9 @@
             "Name": "Dancing Blade",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>2.5 </font> seconds.<br><br>Consumes <font color='#FF6600'>4 </font> Blade Energy.<br>Your blade dances through the air, cutting at your target's spirit dealing <font color='#FF3D3D'>%0.0f </font> physical damage. As you grasp your blade the dance comes to a deadly end, dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>This ability has a <font color='#FF6600'>15 </font> metre range.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.945*${s.CombatPower}+0.945*${s.CombatPower}*${s.BladeAll}+0.945*${s.CombatPower}*${s.BladeElite}",
-                "3.781*${s.CombatPower}+3.781*${s.CombatPower}*${s.BladeAll}+3.781*${s.CombatPower}*${s.BladeElite}",
-                "1.902*${s.CombatPower}+1.902*${s.CombatPower}*${s.BladeAll}"
+                "0.945*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladeElite})",
+                "3.781*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladeElite})",
+                "1.902*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -108,7 +108,7 @@
             "Name": "Crushing Tide",
             "Description": "Consumes <font color='#FF6600'>2 </font> Blade Energy.<br>Requires Spirit Blade to be forged and have at least <font color='#FF6600'>2 </font> attacks remaining. Empower your Spirit Blade with the destructive force of a tsunami making landfall, causing your next Blade attack to shatter the Spirit Blade, dealing <font color='#FF3D3D'>%0.0f </font> damage for each remaining attack.<br><br>This ability does not trigger and is not affected by global recharge time.",
             "Params": [
-                "2.047*${s.CombatPower}+2.047*${s.CombatPower}*${s.BladeAll}"
+                "2.047*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -128,8 +128,8 @@
             "Name": "Snake's Bite",
             "Description": "Consumes <font color='#FF6600'>2 </font> Blade Energy.<br>Strike your target with the pommel of your blade, stunning them for <font color='#FF6600'>3 </font> seconds. You immediately perform a follow up slash dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "2.900*${s.CombatPower}+2.900*${s.CombatPower}*${s.BladeAll}",
-                "0.832*${s.CombatPower}+0.832*${s.CombatPower}*${s.BladeAll}"
+                "2.900*${s.CombatPower}*(1 + ${s.BladeAll})",
+                "0.832*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -149,8 +149,8 @@
             "Name": "Hurricane",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>3 </font> Blade Energy.<br>Your blade cuts through the air creating gale force winds which deal <font color='#FF3D3D'>%0.0f </font> physical damage to nearby enemies.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "1.263*${s.CombatPower}+1.263*${s.CombatPower}*${s.BladeAll}+1.263*${s.CombatPower}*${s.BladePower}+1.263*${s.CombatPower}*${s.AoE}",
-                "1.533*${s.CombatPower}+1.533*${s.CombatPower}*${s.BladeAll}"
+                "1.263*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladePower} + ${s.AoE})",
+                "1.533*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -188,8 +188,8 @@
             "Name": "Swallow Cut",
             "Description": "Consumes <font color='#FF6600'>3 </font> Blade Energy.<br>Perform a quick and precise strike with your blade dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "2.525*${s.CombatPower}+2.525*${s.CombatPower}*${s.BladeAll}+2.525*${s.CombatPower}*${s.BladePower}",
-                "1.533*${s.CombatPower}+1.533*${s.CombatPower}*${s.BladeAll}"
+                "2.525*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladePower})",
+                "1.533*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -209,8 +209,8 @@
             "Name": "Crescent Fang",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Cut a crescent-shaped arc in front of you with your blade dealing <font color='#FF3D3D'>%0.0f </font> physical damage to nearby enemies. </font><br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Requires a Blade in your Primary Weapon slot.",
             "Params": [
-                "0.587*${s.CombatPower}+0.587*${s.CombatPower}*${s.BladeAll}+0.587*${s.CombatPower}*${s.BladeBasic}+0.587*${s.CombatPower}*${s.AoE}",
-                "0.832*${s.CombatPower}+0.832*${s.CombatPower}*${s.BladeAll}"
+                "0.587*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladeBasic} + ${s.AoE})",
+                "0.832*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -230,8 +230,8 @@
             "Name": "Typhoon",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>4 </font> Blade Energy.<br>Embody the destructive nature of a typhoon, lashing out at nearby targets with your blade dealing <font color='#FF3D3D'>%0.0f </font> physical damage and stunning them for <font color='#FF6600'>1 </font> second.<br><br>Like the crushing waves that follow a typhoon, you increase your Blade damage by <font color='#FF6600'>6% </font> for each affected enemy, up to a maximum of <font color='#FF6600'>30% </font>. This effect lasts <font color='#FF6600'>6 </font> seconds.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "1.276*${s.CombatPower}+1.276*${s.CombatPower}*${s.BladeAll}+1.276*${s.CombatPower}*${s.BladeElite}+1.276*${s.CombatPower}*${s.AoE}",
-                "2.944*${s.CombatPower}+2.944*${s.CombatPower}*${s.BladeAll}"
+                "1.276*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladeElite} + ${s.AoE})",
+                "2.944*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -251,9 +251,9 @@
             "Name": "Tempest",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>5 </font> Blade Energy.<br>Unleash a storm of blades around you dealing <font color='#FF3D3D'>%0.0f </font> physical damage to nearby enemies. A whirling vortex is left in the wake of the blade-storm which deals <font color='#FF3D3D'>%0.0f </font> physical damage every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>5 </font> seconds to enemies standing in the area.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "1.199*${s.CombatPower}+1.199*${s.CombatPower}*${s.BladeAll}+1.199*${s.CombatPower}*${s.BladePower}+1.199*${s.CombatPower}*${s.AoE}",
-                "0.051*${s.CombatPower}+0.051*${s.CombatPower}*${s.BladeAll}+0.051*${s.CombatPower}*${s.BladePower}+0.051*${s.CombatPower}*${s.AoE}",
-                "2.092*${s.CombatPower}+2.092*${s.CombatPower}*${s.BladeAll}"
+                "1.199*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladePower} + ${s.AoE})",
+                "0.051*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.BladePower} + ${s.AoE})",
+                "2.092*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -291,11 +291,11 @@
             "Name": "Impale Spirit",
             "Description": "<tspan style='text-decoration: underline;'>Impale Spirit</tspan>:<br>Consumes <font color='#FF6600'>2 </font> Blade Energy.<br>Impale your target with a spirit-forged blade dealing <font color='#FF3D3D'>%0.0f </font> physical damage and slowing its movement. The wound left by the blade lingers on, dealing <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds.<br><br>This ability has a <font color='#FF6600'>10 </font> metre range.<br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Becomes Exhume Spirit for <font color='#FF6600'>5 </font> seconds on a successful hit.<br><br><font color='#DDDDDD'><tspan style='text-decoration: underline;'>Exhume Spirit</tspan>:<br>Slice the air in front of you creating a whirlwind that seeks out the enemy you had impaled. The whirlwind erupts into a violent maelstrom upon reaching its target dealing <font color='#FF3D3D'>%0.0f </font> physical damage to the target and nearby enemies. Applies <i>Exposed</i>. </font><br><br>Spirit Blade bonus: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.611*${s.CombatPower}+0.611*${s.CombatPower}*${s.BladeAll}",
-                "0.285*${s.CombatPower}+0.285*${s.CombatPower}*${s.BladeAll}",
-                "0.832*${s.CombatPower}+0.832*${s.CombatPower}*${s.BladeAll}",
-                "0.919*${s.CombatPower}+0.919*${s.CombatPower}*${s.BladeAll}",
-                "0.832*${s.CombatPower}+0.832*${s.CombatPower}*${s.BladeAll}"
+                "0.611*${s.CombatPower}*(1 + ${s.BladeAll})",
+                "0.285*${s.CombatPower}*(1 + ${s.BladeAll})",
+                "0.832*${s.CombatPower}*(1 + ${s.BladeAll})",
+                "0.919*${s.CombatPower}*(1 + ${s.BladeAll})",
+                "0.832*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Active",
@@ -333,7 +333,7 @@
             "Name": "Eye of the Storm",
             "Description": "Your \"Hurricane\" rages around you, battering your foes with every other hit of this ability for an additional <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.778*${s.CombatPower}+0.778*${s.CombatPower}*${s.BladeAll}+0.778*${s.CombatPower}*${s.AoE}"
+                "0.778*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.AoE})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -353,7 +353,7 @@
             "Name": "Storm Surge",
             "Description": "The waves of your \"Tsunami\" swell whenever Chi is generated, dealing an additional <font color='#FF3D3D'>%0.0f </font> physical damage to the target.",
             "Params": [
-                "0.467*${s.CombatPower}+0.467*${s.CombatPower}*${s.BladeAll}"
+                "0.467*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -445,7 +445,7 @@
             "Name": "Reversal",
             "Description": "Whenever you interrupt an enemy's attack with \"Snake's Bite\", you reverse the flow of harmful energy and gain <font color='#FF6600'>2 </font> Chi. You also direct some of the energy back at your target dealing an additional <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.183*${s.CombatPower}+0.183*${s.CombatPower}*${s.BladeAll}"
+                "0.183*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -465,7 +465,7 @@
             "Name": "Waterfall",
             "Description": "Your \"Rushing River\" cascades like a waterfall into a new flow. If you damage an enemy with \"Rushing River\" you are able to activate \"Rushing River\" a second time within <font color='#FF6600'>5 </font> seconds. The damage of this second activation is increased to <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "3.475*${s.CombatPower}+3.475*${s.CombatPower}*${s.BladeAll}+3.475*${s.CombatPower}*${s.AoE}"
+                "3.475*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.AoE})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -521,7 +521,7 @@
             "Name": "Whirlwind",
             "Description": "You harness the power of the wind while your \"Tempest\" blows furiously around you. While you are inside of the ground area of your \"Tempest\", your Blade attacks deal an additional <font color='#FF3D3D'>%0.0f </font> physical damage to the target and nearby enemies.",
             "Params": [
-                "0.125*${s.CombatPower}+0.125*${s.CombatPower}*${s.BladeAll}+0.125*${s.CombatPower}*${s.AoE}"
+                "0.125*${s.CombatPower}*(1 + ${s.BladeAll} + ${s.AoE})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -541,7 +541,7 @@
             "Name": "Sunder Spirit",
             "Description": "Your \"Exhume Spirit\" tears at the spirit energy of your foes, causing all affected enemies to be dealt <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds.",
             "Params": [
-                "0.500*${s.CombatPower}+0.500*${s.CombatPower}*${s.BladeAll}"
+                "0.500*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -633,7 +633,7 @@
             "Name": "Deluge",
             "Description": "Striking enemies with your Spirit Blade builds up power inside of your Blade. Every other hit with Spirit Blade active unleashes a flood of power around you dealing <font color='#FF3D3D'>%0.0f </font> physical damage to nearby enemies.",
             "Params": [
-                "0.500*${s.CombatPower}+0.500*${s.CombatPower}*${s.BladeAll}"
+                "0.500*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -653,7 +653,7 @@
             "Name": "Sweeping Slice",
             "Description": "You have learned techniques for handling multiple enemies with your Blade. Whenever you hit <font color='#FF6600'>2 </font> or more enemies with a single Blade ability you deal an additional <font color='#FF3D3D'>%0.0f </font> physical damage to nearby enemies.",
             "Params": [
-                "0.125*${s.CombatPower}+0.125*${s.CombatPower}*${s.BladeAll}"
+                "0.125*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -691,7 +691,7 @@
             "Name": "Resonance",
             "Description": "Your spirit resonates strongly with your Blade. Whenever you gain Chi, your next Blade attack deals an additional <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.438*${s.CombatPower}+0.438*${s.CombatPower}*${s.BladeAll}"
+                "0.438*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -711,7 +711,7 @@
             "Name": "Warrior's Spirit",
             "Description": "Your unyielding warrior spirit endures on even as your Spirit Blade shatters. Whenever your Spirit Blade shatters, you gain <font color='#FF6600'>1 </font> Chi and deal <font color='#FF3D3D'>%0.0f </font> physical damage to nearby enemies.",
             "Params": [
-                "0.675*${s.CombatPower}+0.675*${s.CombatPower}*${s.BladeAll}"
+                "0.675*${s.CombatPower}*(1 + ${s.BladeAll})"
             ],
             "Weapon": "Blade",
             "Type": "Passive",
@@ -733,7 +733,7 @@
             "Name": "Smash",
             "Description": "Strike quickly with your hammer dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br>Generates <font color='#FF6600'>5 </font> Rage.<br><br>Requires a Hammer in your Primary Weapon slot.",
             "Params": [
-                "1.175*${s.CombatPower}+1.175*${s.CombatPower}*${s.HammerAll}+1.175*${s.CombatPower}*${s.HammerBasic}"
+                "1.175*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerBasic})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -753,7 +753,7 @@
             "Name": "Blazing Fury",
             "Description": "<b><i>Signature Ability</i></b><br><b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>10 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>3 </font> Hammer Energy.<br>Unleash your rage, creating a blast of flame that incinerates nearby enemies for <font color='#FF3D3D'>%0.0f </font> damage and <font color='#FF3D3D'>%0.0f </font> damage every second for <font color='#FF6600'>12 </font> seconds. You gain <font color='#00FF33'>%0.0f </font> temporary health and receive <font color='#00FF33'>25% </font> more healing for <font color='#FF6600'>6 </font> seconds.<br><br>Taking damage, successfully mitigating received damage, and Enraging reduce the remaining cooldown time.<br>This signature ability scales with tanking stats, and shares a cooldown with other signature abilities.",
             "Params": [
-                "3.350*${s.CombatPower}+3.350*${s.CombatPower}*${s.HammerAll}",
+                "3.350*${s.CombatPower}*(1 + ${s.HammerAll})",
                 "Math.max(1, ((0.01+Math.max(0,${s.Defense}+${s.Evade}-1500) *0.000183077)*(${s.Defense}+${s.Evade})) * Math.max(0.01, ((100-${s.TankAlloc}-${s.HealAlloc})/100)))",
                 "Math.max(1, (Math.ceil(0.5 + ${s.TankAlloc}/100 * ${s.PowerRating} * 2.8562)*0.65))"
             ],
@@ -775,8 +775,8 @@
             "Name": "Demolish",
             "Description": "Consumes <font color='#FF6600'>5 </font> Hammer Energy.<br>Crush your target with the full weight of your hammer dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br>Generates <font color='#FF6600'>25 </font> Rage.<br><br><b><i>When Enraged:</i></b> Unleash your anger on your target improving the damage dealt to <font color='#FF3D3D'>%0.0f </font> phyiscal damage. Instead of generating Rage, this attack consumes <font color='#FF6600'>50 </font> Rage.",
             "Params": [
-                "3.425*${s.CombatPower}+3.425*${s.CombatPower}*${s.HammerAll}+3.425*${s.CombatPower}*${s.HammerPower}",
-                "8.375*${s.CombatPower}+8.375*${s.CombatPower}*${s.HammerAll}+8.375*${s.CombatPower}*${s.HammerPower}"
+                "3.425*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerPower})",
+                "8.375*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerPower})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -796,7 +796,7 @@
             "Name": "Blindside",
             "Description": "Consumes <font color='#FF6600'>2 </font> Hammer Energy.<br>Shove your target to the ground, purging <font color='#FF6600'>1 </font> beneficial effect from them and dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br>Generates <font color='#FF6600'>10 </font> Rage.",
             "Params": [
-                "2.570*${s.CombatPower}+2.570*${s.CombatPower}*${s.HammerAll}"
+                "2.570*${s.CombatPower}*(1 + ${s.HammerAll})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -834,7 +834,7 @@
             "Name": "Ground Pound",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Strike the ground with your hammer, sending out shockwaves which deal <font color='#FF3D3D'>%0.0f </font> physical damage.<br>Generates <font color='#FF6600'>2 </font> Rage per target hit.<br><br>Requires a Hammer in your Primary Weapon slot.",
             "Params": [
-                "0.587*${s.CombatPower}+0.587*${s.CombatPower}*${s.HammerAll}+0.587*${s.CombatPower}*${s.HammerBasic}+0.587*${s.CombatPower}*${s.AoE}"
+                "0.587*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerBasic} + ${s.AoE})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -854,7 +854,7 @@
             "Name": "Eruption",
             "Description": "<b><i>Column:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>6 </font> metre wide by <font color='#FF6600'>9 </font> metre long area in front of you.<br><br>Consumes <font color='#FF6600'>4 </font> Hammer Energy.<br>You smash your hammer into the ground, creating a column of molten ground in front of you that sends enemies into the air, purges <font color='#FF6600'>1 </font> beneficial effect, and deals <font color='#FF3D3D'>%0.0f </font> physical damage. Applies <i>Exposed</i>.<br>Generates <font color='#FF6600'>7 </font> Rage per target hit.",
             "Params": [
-                "5.600*${s.CombatPower}+5.600*${s.CombatPower}*${s.HammerAll}+5.600*${s.CombatPower}*${s.HammerElite}+5.600*${s.CombatPower}*${s.AoE}"
+                "5.600*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerElite} + ${s.AoE})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -874,7 +874,7 @@
             "Name": "Pulverise",
             "Description": "Consumes <font color='#FF6600'>3 </font> Hammer Energy.<br>Bash your target with a backhand swing of your hammer dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br>Generates <font color='#FF6600'>18 </font> Rage.<br><br><b><i>When Enraged:</i></b> Harness your rage to strengthen yourself increasing your maximum health by <font color='#00FF33'>30% </font> for <font color='#FF6600'>15 </font> seconds. Instead of generating Rage, this attack consumes <font color='#FF6600'>50 </font> Rage.",
             "Params": [
-                "2.525*${s.CombatPower}+2.525*${s.CombatPower}*${s.HammerAll}+2.525*${s.CombatPower}*${s.HammerPower}"
+                "2.525*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerPower})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -912,8 +912,8 @@
             "Name": "Enter the Fray",
             "Description": "<b><i>Charge:</i></b> <font color='#FF6600'>15 </font> metre charge to the target. The target must be at least <font color='#FF6600'>3 </font> metres away.<br><br>Consumes <font color='#FF6600'>2 </font> Hammer Energy.<br>Enter the heat of battle by charging to the target, dealing <font color='#FF3D3D'>%0.0f </font> physical damage. For the next <font color='#FF6600'>6 </font> seconds, whenever you are hit, you strike back dealing <font color='#FF3D3D'>%0.0f </font> physical damage to the attacker.<br><br>If your Anima Allocation is at least <font color='#FF6600'>51% </font> Survivability, enemies within <font color='#FF6600'>5 </font> metres of the target are compelled to attack you.<br>Generates <font color='#FF6600'>10 </font> Rage.",
             "Params": [
-                "1.990*${s.CombatPower}+1.990*${s.CombatPower}*${s.HammerAll}",
-                "0.073*${s.CombatPower}+0.073*${s.CombatPower}*${s.HammerAll}"
+                "1.990*${s.CombatPower}*(1 + ${s.HammerAll})",
+                "0.073*${s.CombatPower}*(1 + ${s.HammerAll})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -933,7 +933,7 @@
             "Name": "Rampage",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>2 </font> Hammer Energy.<br>Furiously lash out at nearby enemies dealing <font color='#FF3D3D'>%0.0f </font> physical damage. Applies <i>Exposed</i>.<br>Generates <font color='#FF6600'>9 </font> Rage per target hit.",
             "Params": [
-                "0.624*${s.CombatPower}+0.624*${s.CombatPower}*${s.HammerAll}+0.624*${s.CombatPower}*${s.AoE}"
+                "0.624*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.AoE})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -953,8 +953,8 @@
             "Name": "Razor Shards",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>3 </font> Hammer Energy.<br>Slam the ground with your hammer, sending razor sharp shards of earth flying in all directions dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br>Generates <font color='#FF6600'>6 </font> Rage per target hit.<br><br><b><i>When Enraged:</i></b> Shatter the earth beneath you making larger shards impale affected enemies causing them to take <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds. Instead of generating Rage, this attack consumes <font color='#FF6600'>50 </font> Rage.",
             "Params": [
-                "1.263*${s.CombatPower}+1.263*${s.CombatPower}*${s.HammerAll}+1.263*${s.CombatPower}*${s.HammerPower}+1.263*${s.CombatPower}*${s.AoE}",
-                "0.898*${s.CombatPower}+0.898*${s.CombatPower}*${s.HammerAll}+0.898*${s.CombatPower}*${s.HammerPower}+0.898*${s.CombatPower}*${s.AoE}"
+                "1.263*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerPower} + ${s.AoE})",
+                "0.898*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerPower} + ${s.AoE})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -974,9 +974,9 @@
             "Name": "Burning Wrath",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you and also pulsing every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>5 </font> seconds.<br><br>Consumes <font color='#FF6600'>5 </font> Hammer Energy.<br>Manifest your fiery rage dealing <font color='#FF3D3D'>%0.0f </font> physical damage. For the next <font color='#FF6600'>5 </font> seconds your rage burns nearby enemies dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br>Generates <font color='#FF6600'>8 </font> Rage per target hit by the initial blast.<br><br><b><i>When Enraged:</i></b> Your unbridled rage sunders the earth beneath you leaving a damaging area on the ground. Enemies standing in this area have their movement speed slowed and are dealt <font color='#FF3D3D'>%0.0f </font> physical damage every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>5 </font> seconds. Instead of generating Rage, this attack consumes <font color='#FF6600'>50 </font> Rage.",
             "Params": [
-                "1.541*${s.CombatPower}+1.541*${s.CombatPower}*${s.HammerAll}+1.541*${s.CombatPower}*${s.HammerPower}+1.541*${s.CombatPower}*${s.AoE}",
-                "0.017*${s.CombatPower}+0.017*${s.CombatPower}*${s.HammerAll}+0.017*${s.CombatPower}*${s.HammerPower}+0.017*${s.CombatPower}*${s.AoE}",
-                "0.450*${s.CombatPower}+0.450*${s.CombatPower}*${s.HammerAll}+0.450*${s.CombatPower}*${s.HammerPower}+0.450*${s.CombatPower}*${s.AoE}"
+                "1.541*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerPower} + ${s.AoE})",
+                "0.017*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerPower} + ${s.AoE})",
+                "0.450*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerPower} + ${s.AoE})"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -996,9 +996,9 @@
             "Name": "Raging Volcano",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>6 </font> seconds.<br><b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>10 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>4 </font> Hammer Energy.<br>Become a fiery whirlwind of destruction dealing <font color='#FF3D3D'>%0.0f </font> physical damage per hit while forcing nearby enemies to attack you and slowing their movement. The last hit will deal <font color='#FF3D3D'>%0.0f </font> physical damage and apply <i>Debilitated</i>.<br>While channelling this ability, you gain <font color='#00FF33'>%i </font> temporary health, your movement speed is increased by <font color='#FF6600'>30% </font> and when you are healed you heal again for <font color='#00FF33'>85% </font> of the healing received.<br>Generates <font color='#FF6600'>4 </font> Rage per target hit.",
             "Params": [
-                "0.144*${s.CombatPower}+0.144*${s.CombatPower}*${s.HammerAll}+0.144*${s.CombatPower}*${s.HammerElite}+0.144*${s.CombatPower}*${s.AoE}",
-                "2.931*${s.CombatPower}+2.931*${s.CombatPower}*${s.HammerAll}+2.931*${s.CombatPower}*${s.HammerElite}+2.931*${s.CombatPower}*${s.AoE}",
-                "Math.floor((Math.ceil(0.5 + 1.24 * ${s.PowerRating} * 2.8562)*(0.05+((${s.TankAlloc}/100)*0.95))))"
+                "0.144*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerElite} + ${s.AoE})",
+                "2.931*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerElite} + ${s.AoE})",
+                "Math.floor((Math.ceil(0.5 + 124 / 100 * ${s.PowerRating} * 2.8562)*(0.05+((${s.TankAlloc}/100)*0.95))))"
             ],
             "Weapon": "Hammer",
             "Type": "Active",
@@ -1108,7 +1108,7 @@
             "Name": "Annihilate",
             "Description": "Your Rage knows no limits. When Enraged, \"Eruption\" will no longer generate Rage. Instead it will spend <font color='#FF6600'>50 </font> Rage and increase the damage dealt to <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "12.720*${s.CombatPower}+12.720*${s.CombatPower}*${s.HammerAll}+12.720*${s.CombatPower}*${s.HammerElite}+12.720*${s.CombatPower}*${s.AoE}"
+                "12.720*${s.CombatPower}*(1 + ${s.HammerAll} + ${s.HammerElite} + ${s.AoE})"
             ],
             "Weapon": "Hammer",
             "Type": "Passive",
@@ -1146,7 +1146,7 @@
             "Name": "Brawler",
             "Description": "You are experienced in brawls. The reactive damage dealt by \"Enter the Fray\" is increased to <font color='#FF3D3D'>%0.0f </font> physical damage and you and allies near the target gain <font color='#FF6600'>10000 </font> Protection for <font color='#FF6600'>6 </font> seconds.",
             "Params": [
-                "0.421*${s.CombatPower}+0.421*${s.CombatPower}*${s.HammerAll}"
+                "0.421*${s.CombatPower}*(1 + ${s.HammerAll})"
             ],
             "Weapon": "Hammer",
             "Type": "Passive",
@@ -1310,7 +1310,7 @@
             "Name": "Bristling Rage",
             "Description": "Whenever you are hit, your Rage lashes out at the attacker, damaging them. The amount of damage dealt increases based on your current Rage level. At <font color='#FF6600'>30 </font> Rage, the damage dealt is <font color='#FF6600'>%0.0f </font> physical damage.<br>When you hit an enemy you just damaged this way with a Hammer Power Ability, you have a <font color='#FF6600'>30% </font> chance to gain <font color='#FF6600'>2045 </font> Protection for <font color='#FF6600'>5 </font> seconds.<br><br>Requires a Hammer.",
             "Params": [
-                "0.188*${s.CombatPower}+0.188*${s.CombatPower}*${s.HammerAll}"
+                "0.188*${s.CombatPower}*(1 + ${s.HammerAll})"
             ],
             "Weapon": "Hammer",
             "Type": "Passive",
@@ -1440,7 +1440,7 @@
             "Name": "Thrash",
             "Description": "Lash out at your target with your claws, striking <font color='#FF6600'>2 </font> times for <font color='#FF3D3D'>%0.0f </font> physical damage.<br>Generates <font color='#FF6600'>2 </font> Fury per hit.<br><br>Requires a Fist Weapon in your Primary Weapon slot.",
             "Params": [
-                "0.587*${s.CombatPower}+0.587*${s.CombatPower}*${s.FistAll}+0.587*${s.CombatPower}*${s.FistBasic}"
+                "0.587*${s.CombatPower}*(1 + ${s.FistAll} + ${s.FistBasic})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1460,7 +1460,7 @@
             "Name": "Savage Sweep",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>3 </font> Fist Weapon Energy.<br>Rip and tear at nearby enemies dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br>Generates <font color='#FF6600'>3 </font> Fury per target hit.",
             "Params": [
-                "1.263*${s.CombatPower}+1.263*${s.CombatPower}*${s.FistAll}+1.263*${s.CombatPower}*${s.FistPower}+1.263*${s.CombatPower}*${s.AoE}"
+                "1.263*${s.CombatPower}*(1 + ${s.FistAll} + ${s.FistPower} + ${s.AoE})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1480,8 +1480,8 @@
             "Name": "Eviscerate",
             "Description": "Consumes <font color='#FF6600'>2 </font> Fist Weapon Energy.<br>Impale your target with your claws and tear at their insides dealing <font color='#FF3D3D'>%0.0f </font> physical damage and stunning them for <font color='#FF6600'>3 </font> seconds. Applies <i>Exposed</i>.<br><br>If this ability successfully interrupts a target, you and your group members are healed for <font color='#00FF33'>%0.0f </font> every second for <font color='#FF6600'>5 </font> seconds.<br><br>Generates <font color='#FF6600'>3 </font> Fury.",
             "Params": [
-                "2.700*${s.CombatPower}+2.700*${s.CombatPower}*${s.FistAll}",
-                "0.225*${s.HealPower}+0.225*${s.HealPower}*${s.FistAll}"
+                "2.700*${s.CombatPower}*(1 + ${s.FistAll})",
+                "0.225*${s.HealPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1501,8 +1501,8 @@
             "Name": "Nurture",
             "Description": "Your restorative power heals your target for <font color='#00FF33'>%0.0f </font>, and seeks out and heals the member of your group with the lowest percentage remaining health for the same amount.  Each target healed receives an effect that heals <font color='#00FF33'>%0.0f </font> every second for <font color='#FF6600'>3 </font> seconds. The heal over time effect can stack up to <font color='#FF6600'>6 </font> times. When your primary target is also the lowest health team member, they receive <font color='#FF6600'>2 </font> stacks.<br><br>Generates <font color='#FF6600'>3 </font> Fury. When your Anima Allocation is at least <font color='#FF6600'>51% </font> Healing, you instead generate <font color='#FF6600'>5 </font> Fury<br><br>Requires a Fist Weapon in your Primary Weapon slot.",
             "Params": [
-                "0.470*${s.HealPower}+0.470*${s.HealPower}*${s.FistAll}+0.470*${s.HealPower}*${s.FistBasic}",
-                "0.005*${s.HealPower}+0.005*${s.HealPower}*${s.FistAll}+0.005*${s.HealPower}*${s.FistBasic}"
+                "0.470*${s.HealPower}*(1 + ${s.FistAll} + ${s.FistBasic})",
+                "0.005*${s.HealPower}*(1 + ${s.FistAll} + ${s.FistBasic})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1522,7 +1522,7 @@
             "Name": "Mangle",
             "Description": "Consumes <font color='#FF6600'>5 </font> Fist Weapon Energy.<br>Mutilate your target with a series of <font color='#FF6600'>3 </font> strikes with your claws dealing <font color='#FF3D3D'>%0.0f </font> physical damage per hit. Generates <font color='#FF6600'>4 </font> Fury per hit.",
             "Params": [
-                "1.142*${s.CombatPower}+1.142*${s.CombatPower}*${s.FistAll}+1.142*${s.CombatPower}*${s.FistPower}"
+                "1.142*${s.CombatPower}*(1 + ${s.FistAll} + ${s.FistPower})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1542,7 +1542,7 @@
             "Name": "Berserk",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.25 </font> seconds for <font color='#FF6600'>2.5 </font> seconds.<br><br>Consumes <font color='#FF6600'>4 </font> Fist Weapon Energy.<br>Fly into a berserk rage and unleash a flurry of attacks that deal <font color='#FF3D3D'>%0.0f </font> physical damage per hit. Applies <i>Exposed</i>.<br>While channelling, you and your target are rooted to the ground and unable to move.<br><br>Generates <font color='#FF6600'>2 </font> Fury per hit.",
             "Params": [
-                "0.712*${s.CombatPower}+0.712*${s.CombatPower}*${s.FistAll}+0.712*${s.CombatPower}*${s.FistElite}"
+                "0.712*${s.CombatPower}*(1 + ${s.FistAll} + ${s.FistElite})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1562,8 +1562,8 @@
             "Name": "Ferocity",
             "Description": "Consumes <font color='#FF6600'>2 </font> Fist Weapon Energy.<br>Unleash your ferociousness and empower your next Fist Weapon attack or healing ability. This ability does not trigger and is not affected by global recharge time.<br><br>Your next Fist Weapon attack will remove all Fist Weapon damage over time effects from your target and cause them to immediately deal their remaining damage to the target plus an additional <font color='#FF3D3D'>%0.0f </font> physical damage. Additionally, <font color='#FF6600'>1 </font> beneficial effect will be purged from the target.<br><br>Your next Fist Weapon healing ability will remove all Fist Weapon heal over time effects from your defensive target and cause them to immediately heal for their remaining healing plus an additional <font color='#00FF33'>%0.0f </font>. Additionally, <font color='#FF6600'>2 </font> detrimental effects will be cleansed.<br><br>Generates <font color='#FF6600'>3 </font> Fury.",
             "Params": [
-                "Math.ceil(Math.max(2.900*${s.CombatPower}+2.900*${s.CombatPower}*${s.FistAll}, 1))",
-                "2.900*${s.HealPower}+2.900*${s.HealPower}*${s.FistAll}"
+                "Math.ceil(Math.max(2.900*${s.CombatPower}*(1 + ${s.FistAll}), 1))",
+                "2.900*${s.HealPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1583,7 +1583,7 @@
             "Name": "Renewal",
             "Description": "Consumes <font color='#FF6600'>6 </font> Fist Weapon Energy.<br>Call forth a resurgence of vigour which heals your defensive target <font color='#FF6600'>3 </font> times for <font color='#00FF33'>%0.0f </font>.<br><br>When used to heal yourself, the amount healed is increased by <font color='#FF6600'>300% </font>.<br><br>Generates <font color='#FF6600'>9 </font> Fury.",
             "Params": [
-                "1.233*${s.HealPower}+1.233*${s.HealPower}*${s.FistAll}+1.233*${s.HealPower}*${s.FistPower}"
+                "1.233*${s.HealPower}*(1 + ${s.FistAll} + ${s.FistPower})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1603,8 +1603,8 @@
             "Name": "Feral Regrowth",
             "Description": "Consumes <font color='#FF6600'>10 </font> Fist Weapon Energy.<br>Call forth the natural recuperative forces in your team, healing them for <font color='#00FF33'>%0.0f </font> and for an additional <font color='#00FF33'>%0.0f </font> every second for <font color='#FF6600'>6 </font> seconds.<br><br>Generates <font color='#FF6600'>12 </font> Fury.",
             "Params": [
-                "0.401*${s.HealPower}+0.401*${s.HealPower}*${s.FistAll}",
-                "0.602*${s.HealPower}+0.602*${s.HealPower}*${s.FistAll}+0.602*${s.HealPower}*${s.FistPower}"
+                "0.401*${s.HealPower}*(1 + ${s.FistAll})",
+                "0.602*${s.HealPower}*(1 + ${s.FistAll} + ${s.FistPower})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1642,8 +1642,8 @@
             "Name": "Wild Surge",
             "Description": "Consumes <font color='#FF6600'>2 </font> Fist Weapon Energy.<br>Create a surge of wild power at the targeted point that lasts <font color='#FF6600'>10 </font> seconds. Every second it restores <font color='#00FF33'>%0.0f </font> health and cleanses <font color='#FF6600'>1 </font> detrimental effect from allies in the area and deals <font color='#FF3D3D'>%0.0f </font> physical damage to enemies in the area. Enemies hit will also have their movement slowed.<br><br>Generates <font color='#FF6600'>3 </font> Fury.",
             "Params": [
-                "0.109*${s.HealPower}+0.109*${s.HealPower}*${s.FistAll}",
-                "0.109*${s.CombatPower}+0.109*${s.CombatPower}*${s.FistAll}+0.109*${s.CombatPower}*${s.AoE}"
+                "0.109*${s.HealPower}*(1 + ${s.FistAll})",
+                "0.109*${s.CombatPower}*(1 + ${s.FistAll} + ${s.AoE})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1663,8 +1663,8 @@
             "Name": "Regeneration",
             "Description": "Consumes <font color='#FF6600'>4 </font> Fist Weapon Energy.<br>Cause the wounds suffered by you and your group members to seal up and mend, restoring <font color='#00FF33'>%0.0f </font> health and cleansing <font color='#FF6600'>2 </font> detrimental effects. The mending process continues afterward, restoring <font color='#00FF33'>%0.0f </font> health every second for <font color='#FF6600'>4 </font> seconds.<br><br>Generates <font color='#FF6600'>18 </font> Fury.",
             "Params": [
-                "4.640*${s.HealPower}+4.640*${s.HealPower}*${s.FistAll}+4.640*${s.HealPower}*${s.FistElite}",
-                "1.740*${s.HealPower}+1.740*${s.HealPower}*${s.FistAll}+1.740*${s.HealPower}*${s.FistElite}"
+                "4.640*${s.HealPower}*(1 + ${s.FistAll} + ${s.FistElite})",
+                "1.740*${s.HealPower}*(1 + ${s.FistAll} + ${s.FistElite})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1684,13 +1684,13 @@
             "Name": "Frenzied Wrath",
             "Description": "Tap into your Fury to enter a state of unbridled wrath for a short time and cleanse <font color='#FF6600'>2 </font> detrimental effects from yourself. During this time your entire ability bar is changed into a set of new abilities. This ability does not trigger and is not affected by global recharge time. Requires at least <font color='#FF6600'>60 </font> Fury to activate.<br><br><tspan style='text-decoration: underline;'>Ravage</tspan>: (Default [LMB])<br>Tear flesh from bone causing horrific wounds dealing <font color='#FF3D3D'>%0.0f </font> physical damage and <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds.<br><br><tspan style='text-decoration: underline;'>Shred</tspan>: (Default [RMB])<br>Your razor sharp claws shred nearby enemies dealing <font color='#FF3D3D'>%0.0f </font> physical damage and <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds. If the target has the \"Maim\" effect active, nearby enemies are dealt an additional <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br><tspan style='text-decoration: underline;'>Maim</tspan>: (Default [E])<br>Consumes <font color='#FF6600'>4 </font> Fist Weapon Energy.<br>Tear open wounds on your target dealing <font color='#FF3D3D'>%0.0f </font> physical damage and <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>15 </font> seconds.",
             "Params": [
-                "1.265*${s.CombatPower}+1.265*${s.CombatPower}*${s.FistAll}",
-                "0.590*${s.CombatPower}+0.590*${s.CombatPower}*${s.FistAll}",
-                "2.108*${s.CombatPower}+2.108*${s.CombatPower}*${s.FistAll}+2.108*${s.CombatPower}*${s.AoE}",
-                "0.253*${s.CombatPower}+0.253*${s.CombatPower}*${s.FistAll}+0.253*${s.CombatPower}*${s.AoE}",
-                "0.843*${s.CombatPower}+0.843*${s.CombatPower}*${s.FistAll}+0.843*${s.CombatPower}*${s.AoE}",
-                "0.241*${s.CombatPower}+0.241*${s.CombatPower}*${s.FistAll}",
-                "0.385*${s.CombatPower}+0.385*${s.CombatPower}*${s.FistAll}"
+                "1.265*${s.CombatPower}*(1 + ${s.FistAll})",
+                "0.590*${s.CombatPower}*(1 + ${s.FistAll})",
+                "2.108*${s.CombatPower}*(1 + ${s.FistAll} + ${s.AoE})",
+                "0.253*${s.CombatPower}*(1 + ${s.FistAll} + ${s.AoE})",
+                "0.843*${s.CombatPower}*(1 + ${s.FistAll} + ${s.AoE})",
+                "0.241*${s.CombatPower}*(1 + ${s.FistAll})",
+                "0.385*${s.CombatPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1710,9 +1710,9 @@
             "Name": "Invigorating Wrath",
             "Description": "Tap into your Fury to enter a state of reinvigoration for a short time and cleanse <font color='#FF6600'>2 </font> detrimental effects from yourself. During this time your entire ability bar is changed into a set of new abilities. This ability does not trigger and is not affected by global recharge time. Requires at least <font color='#FF6600'>60 </font> Fury to activate.<br><br><tspan style='text-decoration: underline;'>Revitalise</tspan>: (Default [LMB])<br>Mend the wounds of your target, restoring <font color='#00FF33'>%0.0f </font> health.<br><br><tspan style='text-decoration: underline;'>Invigorate</tspan>: (Default [RMB])<br>Your fury invigorates your group members, restoring <font color='#00FF33'>%0.0f </font> health and increasing the amount of healing they receive by <font color='#FF6600'>8% </font> for <font color='#FF6600'>4 </font> seconds..<br><br><tspan style='text-decoration: underline;'>Revivify</tspan>: (Default [E])<br>Consumes <font color='#FF6600'>4 </font> Fist Weapon Energy.<br>Harness the natural restorative power around you and your group members healing them for <font color='#00FF33'>%0.0f </font> every second for <font color='#FF6600'>6 </font> seconds.",
             "Params": [
-                "4.216*${s.HealPower}+4.216*${s.HealPower}*${s.FistAll}",
-                "3.373*${s.HealPower}+3.373*${s.HealPower}*${s.FistAll}",
-                "1.003*${s.HealPower}+1.003*${s.HealPower}*${s.FistAll}"
+                "4.216*${s.HealPower}*(1 + ${s.FistAll})",
+                "3.373*${s.HealPower}*(1 + ${s.FistAll})",
+                "1.003*${s.HealPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Active",
@@ -1750,7 +1750,7 @@
             "Name": "Rip",
             "Description": "Your \"Savage Sweep\" rips jagged wounds into the flesh of your enemies causing them to bleed for <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds.",
             "Params": [
-                "0.078*${s.CombatPower}+0.078*${s.CombatPower}*${s.FistAll}+0.078*${s.CombatPower}*${s.AoE}"
+                "0.078*${s.CombatPower}*(1 + ${s.FistAll} + ${s.AoE})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1770,8 +1770,8 @@
             "Name": "Gore",
             "Description": "Your control over your Wrath grants you access to a new ability when you are using \"Frenzied Wrath.\"<br><br><tspan style='text-decoration: underline;'>Gore</tspan>: (Default [1])<br><b><i>Charge:</i></b> <font color='#FF6600'>15 </font> metre charge to your target. The target must be at least <font color='#FF6600'>1 </font> metre away.<br><br>You charge to your target and impale them with your claws dealing <font color='#FF3D3D'>%0.0f </font> physical damage to up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius as you arrive. The target and nearby enemies are left bleeding for <font color='#FF3D3D'>%0.0f </font> physical damage every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>5 </font> seconds.",
             "Params": [
-                "1.210*${s.CombatPower}+1.210*${s.CombatPower}*${s.FistAll}",
-                "0.363*${s.CombatPower}+0.363*${s.CombatPower}*${s.FistAll}"
+                "1.210*${s.CombatPower}*(1 + ${s.FistAll})",
+                "0.363*${s.CombatPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1791,7 +1791,7 @@
             "Name": "Maul",
             "Description": "Your \"Mangle\" tears open wounds in your target that do not close quickly causing <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds.",
             "Params": [
-                "0.117*${s.CombatPower}+0.117*${s.CombatPower}*${s.FistAll}"
+                "0.117*${s.CombatPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1811,7 +1811,7 @@
             "Name": "Rampage",
             "Description": "Your \"Berserk\" fury crushes and destroys whomever you set your sights on. When you activate \"Berserk\" the target is additionally stunned for <font color='#FF6600'>5 </font> seconds and the damage dealt is increased to <font color='#FF3D3D'>%0.0f </font> physical damage per hit if the target has one of your Fist Weapon damage over time effects active.",
             "Params": [
-                "0.950*${s.CombatPower}+0.950*${s.CombatPower}*${s.FistAll}+0.950*${s.CombatPower}*${s.FistElite}"
+                "0.950*${s.CombatPower}*(1 + ${s.FistAll} + ${s.FistElite})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1831,8 +1831,8 @@
             "Name": "Bloodbath",
             "Description": "When you \"Eviscerate\" enemies you take advantage of any opening, bolstering your allies and leaving the target maimed. If \"Eviscerate\" successfully interrupts an enemy it deals an additional <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds. Your allies are inspired by the bloodshed, increasing the per second healing amount to <font color='#00FF33'>%0.0f </font>.",
             "Params": [
-                "0.375*${s.CombatPower}+0.375*${s.CombatPower}*${s.FistAll}",
-                "0.538*${s.HealPower}+0.538*${s.HealPower}*${s.FistAll}"
+                "0.375*${s.CombatPower}*(1 + ${s.FistAll})",
+                "0.538*${s.HealPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1852,8 +1852,8 @@
             "Name": "Brutality",
             "Description": "Your brutal \"Ferocity\" leaves its mark on your allies and enemies alike. If \"Ferocity\" is used in conjunction with damage over time effects, the target is dealt an additional <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds.<br><br>If \"Ferocity\" is used in conjunction with heal over time effects, the target is healed for an additional <font color='#00FF33'>%0.0f </font> every second for <font color='#FF6600'>5 </font> seconds.",
             "Params": [
-                "0.500*${s.CombatPower}+0.500*${s.CombatPower}*${s.FistAll}",
-                "0.500*${s.HealPower}+0.500*${s.HealPower}*${s.FistAll}"
+                "0.500*${s.CombatPower}*(1 + ${s.FistAll})",
+                "0.500*${s.HealPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1873,8 +1873,8 @@
             "Name": "Wild Burst",
             "Description": "The untamed power of your \"Wild Surge\" bursts with a final surge of power when it expires. When the ground area effect of \"Wild Surge\" terminates, allies are healed for up to <font color='#00FF33'>%0.0f </font> based on the length of time they spent in the area.<br><br>Likewise, enemies are dealt up to <font color='#FF3D3D'>%0.0f </font> physical damage, based on the length of time they spent in the area.",
             "Params": [
-                "2.500*${s.HealPower}+2.500*${s.HealPower}*${s.FistAll}",
-                "Math.ceil(Math.max(2.500*${s.CombatPower}+2.500*${s.CombatPower}*${s.FistAll}+2.500*${s.CombatPower}*${s.AoE}, 1))"
+                "2.500*${s.HealPower}*(1 + ${s.FistAll})",
+                "Math.ceil(Math.max(2.500*${s.CombatPower}*(1 + ${s.FistAll} + ${s.AoE}), 1))"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1894,7 +1894,7 @@
             "Name": "Furious Inspiration",
             "Description": "The ferocious nature of your \"Savagery\" provides further inspiration. Whenever the target of your \"Savagery\" effect deals damage, they are healed for <font color='#00FF33'>%0.0f </font> and you gain <font color='#FF6600'>3 </font> Fury.",
             "Params": [
-                "0.312*${s.HealPower}+0.312*${s.HealPower}*${s.FistAll}"
+                "0.312*${s.HealPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1932,7 +1932,7 @@
             "Name": "Recuperate",
             "Description": "The restorative power of your \"Renewal\" allows allies to recover more from your further healing effects. After healing an ally with \"Renewal\" any additional healing effects on that ally from you will heal for an additional <font color='#00FF33'>%0.0f </font>. This effect lasts for <font color='#FF6600'>3 </font> seconds.",
             "Params": [
-                "0.233*${s.HealPower}+0.233*${s.HealPower}*${s.FistAll}"
+                "0.233*${s.HealPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1970,8 +1970,8 @@
             "Name": "Serenity",
             "Description": "Your control over your Wrath grants you access to a new ability when you are using \"Invigorating Wrath.\"<br><br><tspan style='text-decoration: underline;'>Serenity</tspan>: (Default [1])<br>A sense of calm washes of you, relieving you of your Fury and channeling it towards restoring your target. You spend all of your remaining Fury to heal an ally for <font color='#00FF33'>%0.0f </font> plus <font color='#00FF33'>%0.0f </font> more for every point of Fury spent.",
             "Params": [
-                "5.116*${s.HealPower}+5.116*${s.HealPower}*${s.FistAll}",
-                "0.120*${s.HealPower}+0.120*${s.HealPower}*${s.FistAll}"
+                "5.116*${s.HealPower}*(1 + ${s.FistAll})",
+                "0.120*${s.HealPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -1991,7 +1991,7 @@
             "Name": "Natural Remedy",
             "Description": "You infuse your \"Regeneration\" with natural energies, increasing the intial healing amount to <font color='#00FF33'>%0.0f </font>. In addition, any overhealing done to any group member is redirected to the group member with the lowest health.",
             "Params": [
-                "5.890*${s.HealPower}+5.890*${s.HealPower}*${s.FistAll}+5.890*${s.HealPower}*${s.FistElite}"
+                "5.890*${s.HealPower}*(1 + ${s.FistAll} + ${s.FistElite})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -2103,8 +2103,8 @@
             "Name": "Keen Senses",
             "Description": "You are able to sense the weaknesses in both allies and enemies, knowing just how to help and harm effectively. Whenever you heal an ally who is below <font color='#FF6600'>35% </font> health with a Fist Weapon ability, you heal for an additional <font color='#00FF33'>%0.0f </font>.<br><br>Whenever you damage an enemy who is below <font color='#FF6600'>35% </font> health  with a Fist Weapon ability you deal an additional <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.250*${s.HealPower}+0.250*${s.HealPower}*${s.FistAll}",
-                "0.250*${s.CombatPower}+0.250*${s.CombatPower}*${s.FistAll}"
+                "0.250*${s.HealPower}*(1 + ${s.FistAll})",
+                "0.250*${s.CombatPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -2142,8 +2142,8 @@
             "Name": "Potent Wrath",
             "Description": "Your wrath ends with an surge of power. Whenever your \"Frenzied Wrath\" effect ends, nearby enemies are dealt <font color='#FF3D3D'>%0.0f </font> physical damage every second for <font color='#FF6600'>5 </font> seconds.<br><br>Whenever your \"Invigorating Wrath\" effect ends all of your group members are healed for <font color='#00FF33'>%0.0f </font> every second for <font color='#FF6600'>5 </font> seconds.",
             "Params": [
-                "0.375*${s.CombatPower}+0.375*${s.CombatPower}*${s.FistAll}",
-                "0.375*${s.HealPower}+0.375*${s.HealPower}*${s.FistAll}"
+                "0.375*${s.CombatPower}*(1 + ${s.FistAll})",
+                "0.375*${s.HealPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -2163,7 +2163,7 @@
             "Name": "Bloody Mist",
             "Description": "Your critical hits result in a savage spray of blood. Whenever you critically hit with a Fist Weapon ability, you deal an additional <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.250*${s.CombatPower}+0.250*${s.CombatPower}*${s.FistAll}"
+                "0.250*${s.CombatPower}*(1 + ${s.FistAll})"
             ],
             "Weapon": "Fist",
             "Type": "Passive",
@@ -2185,7 +2185,7 @@
             "Name": "Mend",
             "Description": "Spill your blood to restore <font color='#00FF33'>%0.0f </font> health to your target, and the same amount to the member of your group with the lowest percentage remaining health.<br><br>Increases your Martyrdom level by <font color='#FF6600'>2 </font>.  When your Anima Allocation is at least <font color='#FF6600'>51% </font> Healing, you instead increase your Martyrdom level by <font color='#FF6600'>4 </font>.<br><br>Requires a Blood Magic Focus in your Primary Weapon slot.",
             "Params": [
-                "0.588*${s.HealPower}+0.588*${s.HealPower}*${s.BloodAll}+0.588*${s.HealPower}*${s.BloodBasic}"
+                "0.588*${s.HealPower}*(1 + ${s.BloodAll} + ${s.BloodBasic})"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2205,8 +2205,8 @@
             "Name": "Sanctuary",
             "Description": "Consumes <font color='#FF6600'>6 </font> Blood Magic Energy.<br>Comfort your defensive target, healing them for <font color='#00FF33'>%0.0f </font>. Overhealing done by this effect generates a shimmering barrier around your defensive target which absorbs <font color='#00FF33'>100% </font> of incoming damage and dissipates after absorbing damage equal to the amount of overhealing. The barrier can be increased through multiple casts, up to a maximum strength of <font color='#00FF33'>%0.0f </font>.<br><br>The maximum strength of the barrier increases with your Critical Chance and Critical Power, and benefits from your Martyrdom.<br><br>When used to heal yourself, the amount healed is increased by <font color='#FF6600'>300% </font>.<br><br>Increases your Martyrdom level by <font color='#FF6600'>8 </font>.",
             "Params": [
-                "3.700*${s.HealPower}+3.700*${s.HealPower}*${s.BloodAll}+3.700*${s.HealPower}*${s.BloodPower}",
-                "(3.7*((${s.HealAlloc} >= 51 ? 5 : 2.5)*Math.max(1, (1+(((0+${s.CritDamage})+(0.3*((0.075*(${s.Level}/50))/50)))*((${s.Crit}+(0.075*(${s.Level}/50)))+0))))))*${s.HealPower}+(3.7*((${s.HealAlloc} >= 51 ? 5 : 2.5)*Math.max(1, (1+(((0+${s.CritDamage})+(0.3*((0.075*(${s.Level}/50))/50)))*((${s.Crit}+(0.075*(${s.Level}/50)))+0))))))*${s.HealPower}*${s.BloodAll}+(3.7*((${s.HealAlloc} >= 51 ? 5 : 2.5)*Math.max(1, (1+(((0+${s.CritDamage})+(0.3*((0.075*(${s.Level}/50))/50)))*((${s.Crit}+(0.075*(${s.Level}/50)))+0))))))*${s.HealPower}*${s.BloodPower}"
+                "3.700*${s.HealPower}*(1 + ${s.BloodAll} + ${s.BloodPower})",
+                "(3.7*((${s.HealAlloc} >= 51 ? 5 : 2.5)*Math.max(1, (1+(((0+${s.CritDamage})+(0.3*((0.075*(${s.Level}/50))/50)))*((${s.Crit}+(0.075*(${s.Level}/50)))+0))))))*${s.HealPower}*(1 + ${s.BloodAll} + ${s.BloodPower})"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2226,7 +2226,7 @@
             "Name": "Maleficium",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>2.5 </font> seconds.<br><br>Consumes <font color='#FF6600'>5 </font> Blood Magic Energy.<br>Conjure a series of baleful runes which inflict <font color='#FF3D3D'>%0.0f </font> magical damage per hit.<br><br>Increases your Corruption level by <font color='#FF6600'>3 </font> per hit.",
             "Params": [
-                "Math.ceil(Math.max(1.038*${s.CombatPower}+1.038*${s.CombatPower}*${s.BloodAll}+1.038*${s.CombatPower}*${s.BloodPower}, 1))"
+                "Math.ceil(Math.max(1.038*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.BloodPower}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2246,8 +2246,8 @@
             "Name": "Redemption",
             "Description": "Consumes <font color='#00FF33'>%i </font> Blood Magic Energy.<br>Recite an incantation to cleanse your soul and aid your defensive target, healing them for <font color='#00FF33'>%0.0f </font> plus <font color='#FF6600'>1 </font> per point of Martyrdom and cleansing them of <font color='#FF6600'>10 </font> detrimental effect. This ability does not trigger and is not affected by global recharge time.<br>Your Martyrdom level must be higher than <font color='#FF6600'>50 </font> to use this ability.<br><br>Consumes all Martyrdom.",
             "Params": [
-                "2.900*${s.HealPower}+2.900*${s.HealPower}*${s.BloodAll}",
-                "0.095*${s.HealPower}+0.095*${s.HealPower}*${s.BloodAll}"
+                "2.900*${s.HealPower}*(1 + ${s.BloodAll})",
+                "0.095*${s.HealPower}*(1 + ${s.BloodAll})"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2267,8 +2267,8 @@
             "Name": "Sanguine Coalescence",
             "Description": "Consumes <font color='#FF6600'>4 </font> Blood Magic Energy.<br>Your blood coalesces to form a barrier around you that absorbs <font color='#00FF33'>100% </font> of incoming damage and is destroyed after absorbing <font color='#00FF33'>%0.0f </font> damage. The strength of the barrier scales based on your Combat Power.<br><br>When the barrier either expires or is destroyed, your blood violenty erupts outwards dealing <font color='#FF3D3D'>%0.0f </font> magical damage to all enemies within <font color='#FF6600'>5 </font> metres of you.<br><br>Increases your Corruption level by <font color='#FF6600'>20 </font> when cast. Reduces your Corruption level by <font color='#FF6600'>20 </font> when the barrier expires or is destroyed.",
             "Params": [
-                "1.160*${s.CombatPower}+1.160*${s.CombatPower}*${s.BloodAll}+1.160*${s.CombatPower}*${s.BloodElite}",
-                "Math.ceil(Math.max(5.220*${s.CombatPower}+5.220*${s.CombatPower}*${s.BloodAll}+5.220*${s.CombatPower}*${s.BloodElite}+5.220*${s.CombatPower}*${s.AoE}, 1))"
+                "1.160*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.BloodElite})",
+                "Math.ceil(Math.max(5.220*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.BloodElite} + ${s.AoE}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2288,7 +2288,7 @@
             "Name": "Dread Sigil",
             "Description": "<b><i>TAoE:</i></b> Affects <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around the target.<br><br>Consumes <font color='#FF6600'>3 </font> Blood Magic Energy.<br>Etch a blood-forged sigil of dread on the ground underneath your target dealing <font color='#FF3D3D'>%0.0f </font> magical damage to the target and nearby enemies.<br><br>Increases your Corruption level by <font color='#FF6600'>8 </font>.",
             "Params": [
-                "Math.ceil(Math.max(1.262*${s.CombatPower}+1.262*${s.CombatPower}*${s.BloodAll}+1.262*${s.CombatPower}*${s.BloodPower}+1.262*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(1.262*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.BloodPower} + ${s.AoE}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2308,7 +2308,7 @@
             "Name": "Torment",
             "Description": "Invoke a ritual of pain on your target dealing <font color='#FF3D3D'>%0.0f </font> magical damage.<br><br>Increases your Corruption level by <font color='#FF6600'>2 </font>.<br><br>Requires a Blood Magic Focus in your Primary Weapon slot.",
             "Params": [
-                "Math.ceil(Math.max(1.175*${s.CombatPower}+1.175*${s.CombatPower}*${s.BloodAll}+1.175*${s.CombatPower}*${s.BloodBasic}, 1))"
+                "Math.ceil(Math.max(1.175*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.BloodBasic}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2328,7 +2328,7 @@
             "Name": "Convalesce",
             "Description": "Consumes <font color='#FF6600'>10 </font> Blood Magic Energy.<br>Trace runes in the air to invoke a powerful restorative spell which heals your group for <font color='#00FF33'>%0.0f </font>. Any group member with less than <font color='#FF6600'>35% </font> remaining health gains a barrier which absorbs <font color='#00FF33'>100% </font> of incoming damage and dissipates after absorbing <font color='#00FF33'>%0.0f </font> damage.<br><br>Increases your Martyrdom level by <font color='#FF6600'>12 </font>.",
             "Params": [
-                "3.611*${s.HealPower}+3.611*${s.HealPower}*${s.BloodAll}+3.611*${s.HealPower}*${s.BloodPower}",
+                "3.611*${s.HealPower}*(1 + ${s.BloodAll} + ${s.BloodPower})",
                 "2.006*${s.HealPower}"
             ],
             "Weapon": "Blood",
@@ -2349,8 +2349,8 @@
             "Name": "Communion",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>2 </font> seconds.<br><br>Consumes <font color='#FF6600'>4 </font> Blood Magic Energy.<br>Share your lifeblood with your group members to shield them from harm and restore their health. First, each group member receives a barrier which absorbs <font color='#00FF33'>100% </font> of incoming damage and dissipates after absorbing <font color='#00FF33'>%0.0f </font> damage.<br><br>The remaining power of the spell restores <font color='#00FF33'>%0.0f </font> health per tick.  The first and final tick cleanse <font color='#FF6600'>1 </font> detrimental effect.<br><br>Increases your Martyrdom level by <font color='#FF6600'>4 </font> each tick.",
             "Params": [
-                "1.744*${s.HealPower}+1.744*${s.HealPower}*${s.BloodAll}+1.744*${s.HealPower}*${s.BloodElite}",
-                "1.744*${s.HealPower}+1.744*${s.HealPower}*${s.BloodAll}+1.744*${s.HealPower}*${s.BloodElite}"
+                "1.744*${s.HealPower}*(1 + ${s.BloodAll} + ${s.BloodElite})",
+                "1.744*${s.HealPower}*(1 + ${s.BloodAll} + ${s.BloodElite})"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2370,7 +2370,7 @@
             "Name": "Reap",
             "Description": "Consumes <font color='#FF6600'>2 </font> Blood Magic Energy.<br>Replenish yourself by feasting on a flood of power from your target. The target is left bleeding, causing <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>7 </font> seconds. The stolen power restores <font color='#00FF33'>35% </font> of your missing health and cleanses you of <font color='#FF6600'>1 </font> detrimental effect.<br>Your Corruption level must be higher than <font color='#FF6600'>10 </font> to use this ability.<br><br>Reduces your Corruption level by <font color='#FF6600'>50 </font>.",
             "Params": [
-                "Math.ceil(Math.max(0.254*${s.CombatPower}+0.254*${s.CombatPower}*${s.BloodAll}, 1))"
+                "Math.ceil(Math.max(0.254*${s.CombatPower}*(1 + ${s.BloodAll}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2390,7 +2390,7 @@
             "Name": "Rupture",
             "Description": "Consumes <font color='#FF6600'>2 </font> Blood Magic Energy.<br>Rip the target's heart from their chest and crush it in your hand dealing <font color='#FF3D3D'>%0.0f </font> magical damage. The target also becomes stunned for <font color='#FF6600'>3 </font> seconds. The damage dealt is based on your Combat Power if your Corruption level is above <font color='#FF6600'>10 </font> or based on your Healing Power if your Martyrdom level is above <font color='#FF6600'>10 </font>.<br><br>Reduces your Corruption or Martyrdom level by <font color='#FF6600'>50 </font>.",
             "Params": [
-                "Math.max(Math.ceil(Math.max(2.900*${s.CombatPower}+2.900*${s.CombatPower}*${s.BloodAll}, 1)), 2.900*${s.HealPower}+2.900*${s.HealPower}*${s.BloodAll})"
+                "Math.max(Math.ceil(Math.max(2.900*${s.CombatPower}*(1 + ${s.BloodAll}), 1)), 2.900*${s.HealPower}*(1 + ${s.BloodAll}))"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2410,9 +2410,9 @@
             "Name": "Eldritch Scourge",
             "Description": "Consumes <font color='#FF6600'>4 </font> Blood Magic Energy.<br>Recite a blasphemous invocation which twists and defiles the very being of your target. The destructive energy contained in this magic causes the target to take <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>6 </font> seconds. Applies <i>Debilitated</i>.<br><br>During this time the defilement spreads to nearby enemies causing them to take <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>3 </font> seconds. Applies <i>Debilitated</i>. In addition, the original target's essence is separated from their body to heal your nearby allies, restoring <font color='#00FF33'>%0.0f </font> health every second for <font color='#FF6600'>3 </font> seconds.<br><br>Increases your Corruption or Martyrdom level by <font color='#FF6600'>15 </font>. If used when at a neutral position, your Corruption level will be increased.",
             "Params": [
-                "Math.ceil(Math.max(0.684*${s.CombatPower}+0.684*${s.CombatPower}*${s.BloodAll}+0.684*${s.CombatPower}*${s.BloodElite}, 1))",
-                "Math.ceil(Math.max(0.532*${s.CombatPower}+0.532*${s.CombatPower}*${s.BloodAll}+0.532*${s.CombatPower}*${s.BloodElite}+0.532*${s.CombatPower}*${s.AoE}, 1))",
-                "0.532*${s.HealPower}+0.532*${s.HealPower}*${s.BloodAll}+0.532*${s.HealPower}*${s.BloodElite}"
+                "Math.ceil(Math.max(0.684*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.BloodElite}), 1))",
+                "Math.ceil(Math.max(0.532*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.BloodElite} + ${s.AoE}), 1))",
+                "0.532*${s.HealPower}*(1 + ${s.BloodAll} + ${s.BloodElite})"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2432,7 +2432,7 @@
             "Name": "Desecrate",
             "Description": "Consumes <font color='#FF6600'>2 </font> Blood Magic Energy.<br>Afflict your target with the corruption that flows through your veins purging <font color='#FF6600'>1 </font> beneficial effect and dealing <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>6 </font> seconds. During this time you do not take damage from Corruption. Your Corruption level must be higher than <font color='#FF6600'>10 </font> to use this ability.",
             "Params": [
-                "Math.ceil(Math.max(0.373*${s.CombatPower}+0.373*${s.CombatPower}*${s.BloodAll}, 1))"
+                "Math.ceil(Math.max(0.373*${s.CombatPower}*(1 + ${s.BloodAll}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2452,10 +2452,10 @@
             "Name": "Runic Hex",
             "Description": "Consumes <font color='#FF6600'>2 </font> Blood Magic Energy.<br>Carve a withering hex onto your target's soul which deals <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>6 </font> seconds and slows its movement. Applies <i>Debilitated</i>. During this time the target's attacks restore <font color='#00FF33'>%0.0f </font> health to whomever they attack.<br><br>The hex explodes violently when it expires, dealing <font color='#FF3D3D'>%0.0f </font> magical damage to nearby enemies and healing nearby allies for <font color='#00FF33'>%0.0f </font>.<br><br>Reduces your Corruption or Martyrdom level by <font color='#FF6600'>50 </font>.",
             "Params": [
-                "Math.ceil(Math.max(0.249*${s.CombatPower}+0.249*${s.CombatPower}*${s.BloodAll}, 1))",
-                "0.373*${s.HealPower}+0.373*${s.HealPower}*${s.BloodAll}",
-                "Math.ceil(Math.max(0.872*${s.CombatPower}+0.872*${s.CombatPower}*${s.BloodAll}, 1))",
-                "0.872*${s.HealPower}+0.872*${s.HealPower}*${s.BloodAll}"
+                "Math.ceil(Math.max(0.249*${s.CombatPower}*(1 + ${s.BloodAll}), 1))",
+                "0.373*${s.HealPower}*(1 + ${s.BloodAll})",
+                "Math.ceil(Math.max(0.872*${s.CombatPower}*(1 + ${s.BloodAll}), 1))",
+                "0.872*${s.HealPower}*(1 + ${s.BloodAll})"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2475,7 +2475,7 @@
             "Name": "Expunge Blight",
             "Description": "Consumes <font color='#00FF33'>%i </font> Blood Magic Energy.<br>Draw tainted blood out of your defensive target's heart, creating a <font color='#FF6600'>Flesh Monstrosity </font>.  The <font color='#FF6600'>Flesh Monstrosity </font> has <font color='#00FF33'>50 </font> health and will absorb <font color='#00FF33'>20% </font> of all damage dealt to your defensive target, and <font color='#FF6600'>8% </font> of all damage dealt to your defensive target's team for <font color='#FF6600'>10 </font> seconds, or until it dies. This ability does not trigger and is not affected by global recharge time.<br>The health of the <font color='#FF6600'>Flesh Monstrosity </font> scales with your Healing Power.",
             "Params": [
-                "105.450*${s.HealPower}+105.450*${s.HealPower}*${s.BloodAll}"
+                "105.450*${s.HealPower}*(1 + ${s.BloodAll})"
             ],
             "Weapon": "Blood",
             "Type": "Active",
@@ -2513,7 +2513,7 @@
             "Name": "Lingering Curse",
             "Description": "The effects of your \"Dread Sigil\" linger, cursing affected targets by dealing <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>5 </font> seconds.",
             "Params": [
-                "Math.ceil(Math.max(0.078*${s.CombatPower}+0.078*${s.CombatPower}*${s.BloodAll}+0.078*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(0.078*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.AoE}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2533,8 +2533,8 @@
             "Name": "Contaminate",
             "Description": "When you \"Reap\" enemies you infuse them with your Corruption, causing the damage over time effect to increase to <font color='#FF3D3D'>%0.0f - %0.0f </font> magical damage per second. The damage dealt increases based on your Corruption level when \"Reap\" is cast.",
             "Params": [
-                "Math.ceil(Math.max(0.535*${s.CombatPower}+0.535*${s.CombatPower}*${s.BloodAll}, 1))",
-                "Math.ceil(Math.max(0.590*${s.CombatPower}+0.590*${s.CombatPower}*${s.BloodAll}, 1))"
+                "Math.ceil(Math.max(0.535*${s.CombatPower}*(1 + ${s.BloodAll}), 1))",
+                "Math.ceil(Math.max(0.590*${s.CombatPower}*(1 + ${s.BloodAll}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2554,7 +2554,7 @@
             "Name": "Flay",
             "Description": "The magic conjured by your \"Maleficium\" mercilessly tears at your foes, increasing the damage dealt to <font color='#FF3D3D'>%0.0f </font> on enemies who are affected by any of your Blood Magic damage over time effects.",
             "Params": [
-                "Math.ceil(Math.max(1.154*${s.CombatPower}+1.154*${s.CombatPower}*${s.BloodAll}+1.154*${s.CombatPower}*${s.BloodPower}, 1))"
+                "Math.ceil(Math.max(1.154*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.BloodPower}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2574,7 +2574,7 @@
             "Name": "Convergence",
             "Description": "When \"Sanguine Coalescence\" expires or is destroyed, the energy converges inside of you instead of exploding outwards causing your next <font color='#FF6600'>4 </font> Blood Magic attacks to deal an additional <font color='#FF3D3D'>%0.0f </font> magical damage.",
             "Params": [
-                "Math.ceil(Math.max(1.930*${s.CombatPower}+1.930*${s.CombatPower}*${s.BloodAll}+1.930*${s.CombatPower}*${s.BloodElite}, 1))"
+                "Math.ceil(Math.max(1.930*${s.CombatPower}*(1 + ${s.BloodAll} + ${s.BloodElite}), 1))"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2594,8 +2594,8 @@
             "Name": "Blood Flow",
             "Description": "Power flows from the crushed heart of victims of your \"Rupture.\"<br><br>If your Corruption level is above <font color='#FF6600'>60 </font> you further afflict the target, dealing <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>6 </font> seconds.<br><br>If your Martyrdom level is above <font color='#FF6600'>60 </font> you transform the power into healing energy for your defensive target, restoring <font color='#00FF33'>%0.0f </font> health every second for <font color='#FF6600'>6 </font> seconds.<br><br>These effects are improved if \"Rupture\" successfully interrupts a target.",
             "Params": [
-                "Math.ceil(Math.max(0.357*${s.CombatPower}+0.357*${s.CombatPower}*${s.BloodAll}, 1))",
-                "0.357*${s.HealPower}+0.357*${s.HealPower}*${s.BloodAll}"
+                "Math.ceil(Math.max(0.357*${s.CombatPower}*(1 + ${s.BloodAll}), 1))",
+                "0.357*${s.HealPower}*(1 + ${s.BloodAll})"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2633,7 +2633,7 @@
             "Name": "Antibody",
             "Description": "A higher amount of antibodies help to draw forth more tainted blood, increasing the health of the <font color='#FF6600'>Flesh Monstrosity </font> created by your \"Expunge Blight\" to <font color='#00FF33'>%0.0f </font> and increasing the damage it absorbs to <font color='#00FF33'>65% </font> for your defensive target, and <font color='#00FF33'>30% </font> for secondary targets.<br><br>Additionally, as long as the <font color='#FF6600'>Flesh Monstrosity </font> survives, it will cleanse <font color='#FF6600'>1 </font> detrimental effect from all targets every <font color='#FF6600'>2 </font> seconds.",
             "Params": [
-                "164.503*${s.HealPower}+164.503*${s.HealPower}*${s.BloodAll}"
+                "164.503*${s.HealPower}*(1 + ${s.BloodAll})"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2653,10 +2653,10 @@
             "Name": "Paroxysm",
             "Description": "The runes inscribed by your \"Runic Hex\" are carved deep, resulting in mass hexing. When \"Runic Hex\" expires, any enemies damaged by the resulting detonation are afflicted with a lesser version of the Hex which deals <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>3 </font> seconds and slows their movement. During this time the target's attacks restore <font color='#00FF33'>%0.0f </font> health to whomever they attack.<br><br>The hex explodes one final time when it expires, dealing <font color='#FF3D3D'>%0.0f </font> magical damage to nearby enemies and healing nearby allies for <font color='#00FF33'>%0.0f </font>.",
             "Params": [
-                "Math.ceil(Math.max(0.312*${s.CombatPower}+0.312*${s.CombatPower}*${s.BloodAll}, 1))",
-                "0.417*${s.HealPower}+0.417*${s.HealPower}*${s.BloodAll}",
-                "Math.ceil(Math.max(0.625*${s.CombatPower}+0.625*${s.CombatPower}*${s.BloodAll}, 1))",
-                "0.625*${s.HealPower}+0.625*${s.HealPower}*${s.BloodAll}"
+                "Math.ceil(Math.max(0.312*${s.CombatPower}*(1 + ${s.BloodAll}), 1))",
+                "0.417*${s.HealPower}*(1 + ${s.BloodAll})",
+                "Math.ceil(Math.max(0.625*${s.CombatPower}*(1 + ${s.BloodAll}), 1))",
+                "0.625*${s.HealPower}*(1 + ${s.BloodAll})"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2748,7 +2748,7 @@
             "Name": "Sacrament",
             "Description": "The runic energy which maintains the barriers applied by your \"Communion\" ability is bound with a powerful charm. Whenever any of your \"Communion\" barriers are destroyed by incoming damage, your entire group is healed for <font color='#00FF33'>%0.0f </font>.",
             "Params": [
-                "1.250*${s.HealPower}+1.250*${s.HealPower}*${s.BloodAll}"
+                "1.250*${s.HealPower}*(1 + ${s.BloodAll})"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2824,7 +2824,7 @@
             "Name": "Shroud of Retribution",
             "Description": "Your Blood Magic barriers are covered in retributive runes, increasing the strength of your Blood Magic barriers by <font color='#FF6600'>3% </font> and causing <font color='#FF3D3D'>%0.0f </font> magical damage to any attackers. The damage dealt scales with your Combat Power or Healing Power, whichever is higher.",
             "Params": [
-                "Math.max(Math.ceil(Math.max(0.125*${s.CombatPower}+0.125*${s.CombatPower}*${s.BloodAll}, 1)), 0.125*${s.HealPower}+0.125*${s.HealPower}*${s.BloodAll})"
+                "Math.max(Math.ceil(Math.max(0.125*${s.CombatPower}*(1 + ${s.BloodAll}), 1)), 0.125*${s.HealPower}*(1 + ${s.BloodAll}))"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2844,8 +2844,8 @@
             "Name": "Last Rites",
             "Description": "Your magical power allows you to cheat death for a brief time. Whenever you take damage that would have defeated you and your Corruption or Martyrdom level is above <font color='#FF6600'>60 </font>, you instead are able to continue living for <font color='#FF6600'>4 </font> seconds.<br><br>When this time expires, you are truly defeated. If your Corruption level was above <font color='#FF6600'>60 </font> when \"Last Rites\" was triggered, you explode upon death dealing <font color='#FF3D3D'>%0.0f </font> magical damage to nearby enemies. If your Martyrdom level was above <font color='#FF6600'>60 </font> when \"Last Rites\" was triggered, you explode upon death restorting <font color='#00FF33'>%0.0f </font> health to nearby allies.",
             "Params": [
-                "Math.ceil(Math.max(2.500*${s.CombatPower}+2.500*${s.CombatPower}*${s.BloodAll}, 1))",
-                "2.500*${s.HealPower}+2.500*${s.HealPower}*${s.BloodAll}"
+                "Math.ceil(Math.max(2.500*${s.CombatPower}*(1 + ${s.BloodAll}), 1))",
+                "2.500*${s.HealPower}*(1 + ${s.BloodAll})"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2865,8 +2865,8 @@
             "Name": "Crimson Pulse",
             "Description": "Your blood surges when you critically hit or heal with Blood Magic abilities. When you critically hit, your target suffers <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>3 </font> seconds. When you critically heal, your ally regains <font color='#00FF33'>%0.0f </font> health every second for <font color='#FF6600'>3 </font> seconds.",
             "Params": [
-                "Math.ceil(Math.max(0.083*${s.CombatPower}+0.083*${s.CombatPower}*${s.BloodAll}, 1))",
-                "0.083*${s.HealPower}+0.083*${s.HealPower}*${s.BloodAll}"
+                "Math.ceil(Math.max(0.083*${s.CombatPower}*(1 + ${s.BloodAll}), 1))",
+                "0.083*${s.HealPower}*(1 + ${s.BloodAll})"
             ],
             "Weapon": "Blood",
             "Type": "Passive",
@@ -2926,7 +2926,7 @@
             "Name": "Schism",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>3 </font> Chaos Energy.<br>Split matter from energy in an area around you, dealing <font color='#FF3D3D'>%0.0f </font> magical damage.",
             "Params": [
-                "Math.ceil(Math.max(1.262*${s.CombatPower}+1.262*${s.CombatPower}*${s.ChaosAll}+1.262*${s.CombatPower}*${s.ChaosPower}+1.262*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(1.262*${s.CombatPower}*(1 + ${s.ChaosAll} + ${s.ChaosPower} + ${s.AoE}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -2946,7 +2946,7 @@
             "Name": "Pandemonium",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in up to a <font color='#FF6600'>7 </font> metre area around you.<br><br>Consumes <font color='#FF6600'>4 </font> Chaos Energy.<br>Unfurl the full extent of the chaotic power that resides in all things. Nearby enemies are caught up in the swell of power and are dealt <font color='#FF3D3D'>%0.0f </font> magical damage as they are flung to the ground.",
             "Params": [
-                "Math.ceil(Math.max(5.800*${s.CombatPower}+5.800*${s.CombatPower}*${s.ChaosAll}+5.800*${s.CombatPower}*${s.ChaosPower}+5.800*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(5.800*${s.CombatPower}*(1 + ${s.ChaosAll} + ${s.ChaosPower} + ${s.AoE}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -2966,7 +2966,7 @@
             "Name": "Breakdown",
             "Description": "Consumes <font color='#FF6600'>5 </font> Chaos Energy.<br>Focus your chaotic energy into a series of <font color='#FF6600'>4 </font> hits. Each hit breaks down the target's corporeal form dealing <font color='#FF3D3D'>%0.0f </font> magical damage.",
             "Params": [
-                "Math.ceil(Math.max(0.856*${s.CombatPower}+0.856*${s.CombatPower}*${s.ChaosAll}+0.856*${s.CombatPower}*${s.ChaosPower}, 1))"
+                "Math.ceil(Math.max(0.856*${s.CombatPower}*(1 + ${s.ChaosAll} + ${s.ChaosPower}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -2986,7 +2986,7 @@
             "Name": "Tumultuous Whisper",
             "Description": "<b><i>Column:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>2 </font> metre wide by <font color='#FF6600'>10 </font> metre long area in front of you.<br><br>Consumes <font color='#FF6600'>2 </font> Chaos Energy.<br>Let loose a wave of entropic power, withering and decaying enemies in front of you dealing <font color='#FF3D3D'>%0.0f </font> magical damage. Affected enemies are purged of <font color='#FF6600'>1 </font> beneficial effect.<br><br>The damage dealt by this attack will always be divisible by eight, resulting in <font color='#FF6600'>2 - 4 </font> Paradoxes.<br><br>This ability cannot critically hit. Instead, its damage is increased by a combination of your critical chance and critical power.",
             "Params": [
-                "Math.ceil(Math.max(0.450*${s.CombatPower}+0.450*${s.CombatPower}*${s.ChaosAll}+0.450*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(0.450*${s.CombatPower}*(1 + ${s.ChaosAll} + ${s.AoE}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -3024,7 +3024,7 @@
             "Name": "Turmoil",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Execute a spinning kick charged with a torrent of chaotic power dealing <font color='#FF3D3D'>%0.0f </font> magical damage.<br><br>Requires a Chaos Focus in your Primary Weapon slot.",
             "Params": [
-                "Math.ceil(Math.max(0.588*${s.CombatPower}+0.588*${s.CombatPower}*${s.ChaosAll}+0.588*${s.CombatPower}*${s.ChaosBasic}+0.588*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(0.588*${s.CombatPower}*(1 + ${s.ChaosAll} + ${s.ChaosBasic} + ${s.AoE}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -3062,7 +3062,7 @@
             "Name": "Distortion",
             "Description": "Consumes <font color='#FF6600'>3 </font> Chaos Energy.<br>Cause a ripple in the fabric of reality within your target dealing <font color='#FF3D3D'>%0.0f </font> magical damage.",
             "Params": [
-                "Math.ceil(Math.max(2.525*${s.CombatPower}+2.525*${s.CombatPower}*${s.ChaosAll}+2.525*${s.CombatPower}*${s.ChaosPower}, 1))"
+                "Math.ceil(Math.max(2.525*${s.CombatPower}*(1 + ${s.ChaosAll} + ${s.ChaosPower}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -3082,7 +3082,7 @@
             "Name": "Deconstruct",
             "Description": "Charge your hands with chaotic energy and strike your target <font color='#FF6600'>3 </font> times, dealing <font color='#FF3D3D'>%0.0f </font> magical damage per hit.<br><br>Requires a Chaos Focus in your Primary Weapon slot.",
             "Params": [
-                "Math.ceil(Math.max(0.392*${s.CombatPower}+0.392*${s.CombatPower}*${s.ChaosAll}+0.392*${s.CombatPower}*${s.ChaosBasic}, 1))"
+                "Math.ceil(Math.max(0.392*${s.CombatPower}*(1 + ${s.ChaosAll} + ${s.ChaosBasic}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -3102,7 +3102,7 @@
             "Name": "Twist Fate",
             "Description": "<b><i>Signature Ability</i></b><br><b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>10 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>3 </font> Chaos Energy.<br>Twist reality, dealing <font color='#FF3D3D'>%0.0f </font> damage to nearby enemies,  <font color='#FF3D3D'>%0.0f </font> damage every second for <font color='#FF6600'>12 </font> seconds, and clearing <font color='#FF6600'>65% </font> of the damage currently delayed by <i>Aegis of Parallelism</i>.<br><br>Evading attacks and reaching <font color='#FF6600'>8 </font> Paradoxes reduce the remaining cooldown time.<br>This signature ability scales with tanking stats, and shares a cooldown with other signature abilities.",
             "Params": [
-                "3.350*${s.CombatPower}+3.350*${s.CombatPower}*${s.HammerAll}",
+                "3.350*${s.CombatPower}*(1 + ${s.HammerAll})",
                 "Math.max(1, ((0.01+Math.max(0,${s.Defense}+${s.Evade}-1500) *0.000183077)*(${s.Defense}+${s.Evade})) * Math.max(0.01, ((100-${s.TankAlloc}-${s.HealAlloc})/100)))"
             ],
             "Weapon": "Chaos",
@@ -3123,7 +3123,7 @@
             "Name": "Reality Fracture",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>2 </font> Chaos Energy.<br>Leap into the air and shatter the barrier between realities and cause chaotic energy to burst forth in an area around you dealing <font color='#FF3D3D'>%0.0f </font> magical damage. Applies <i>Exposed</i>.<br><br>If this attack hits <font color='#FF6600'>3 </font> or more enemies, it generates <font color='#FF6600'>1 </font> Paradox.",
             "Params": [
-                "Math.ceil(Math.max(1.017*${s.CombatPower}+1.017*${s.CombatPower}*${s.ChaosAll}+1.017*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(1.017*${s.CombatPower}*(1 + ${s.ChaosAll} + ${s.AoE}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -3143,7 +3143,7 @@
             "Name": "Evulsion",
             "Description": "Consumes <font color='#FF6600'>2 </font> Chaos Energy.<br>Forcibly tear out a portion of the chaotic energy in your target dealing <font color='#FF3D3D'>%0.0f </font> magical damage. The force of the extraction causes the target to be pulled toward you and purges <font color='#FF6600'>1 </font> beneficial effect. Additionally, the target is forced to attack you for <font color='#FF6600'>5 </font> seconds. This ability has a <font color='#FF6600'>15 </font> metre range.",
             "Params": [
-                "Math.ceil(Math.max(2.900*${s.CombatPower}+2.900*${s.CombatPower}*${s.ChaosAll}, 1))"
+                "Math.ceil(Math.max(2.900*${s.CombatPower}*(1 + ${s.ChaosAll}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -3163,7 +3163,7 @@
             "Name": "Anomaly",
             "Description": "<b><i>Channelled:</i></b> Every second for <font color='#FF6600'>3 </font> seconds.<br><b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>10 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>4 </font> Chaos Energy.<br>Create a localised anomaly within the palm of your hands. Each twist of your hands sends out waves of destructive energy dealing <font color='#FF3D3D'>%0.0f </font> magical damage and sending targets flying into the air. Applies <i>Exposed</i>. Your Evade Chance is increased by <font color='#FF6600'>10% </font> while channeling this ability.<br><br>Damage dealt by this ability has a <font color='#FF6600'>20% </font> chance to generate <font color='#FF6600'>1 </font> Paradox.",
             "Params": [
-                "Math.ceil(Math.max(1.139*${s.CombatPower}+1.139*${s.CombatPower}*${s.ElementalismAll}+1.139*${s.CombatPower}*${s.ElementalismBasic}, 1))"
+                "Math.ceil(Math.max(1.139*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismBasic}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -3183,7 +3183,7 @@
             "Name": "Winds of Change",
             "Description": "<b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>5 </font> Chaos Energy.<br>Send the destructive winds of change to wreak havoc on nearby enemies dealing <font color='#FF3D3D'>%0.0f </font> magical damage.",
             "Params": [
-                "Math.ceil(Math.max(1.712*${s.CombatPower}+1.712*${s.CombatPower}*${s.ChaosAll}+1.712*${s.CombatPower}*${s.ChaosPower}+1.712*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(1.712*${s.CombatPower}*(1 + ${s.ChaosAll} + ${s.ChaosPower} + ${s.AoE}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Active",
@@ -3257,8 +3257,8 @@
             "Name": "Disintegrate",
             "Description": "If all hits of \"Breakdown\" are successful, the target's form collapses further dealing <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>5 </font> seconds. If this effect is already active, the target instead takes <font color='#FF3D3D'>%0.0f </font> magical damage instantly.",
             "Params": [
-                "0.117*${s.CombatPower}+0.117*${s.CombatPower}*${s.ChaosAll}",
-                "Math.ceil(Math.max(0.583*${s.CombatPower}+0.583*${s.CombatPower}*${s.ChaosAll}, 1))"
+                "0.117*${s.CombatPower}*(1 + ${s.ChaosAll})",
+                "Math.ceil(Math.max(0.583*${s.CombatPower}*(1 + ${s.ChaosAll}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Passive",
@@ -3278,7 +3278,7 @@
             "Name": "Fractured Existence",
             "Description": "The chaotic power unleashed by \"Pandemonium\" lashes out with great force creating Singularities that deal <font color='#FF3D3D'>%0.0f </font> magical damage to enemies caught in the blast.",
             "Params": [
-                "Math.ceil(Math.max(2.667*${s.CombatPower}+2.667*${s.CombatPower}*${s.ChaosAll}, 1))"
+                "Math.ceil(Math.max(2.667*${s.CombatPower}*(1 + ${s.ChaosAll}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Passive",
@@ -3316,7 +3316,7 @@
             "Name": "Rend Space",
             "Description": "Your \"Reality Fracture\" rends spacetime itself for <font color='#FF6600'>5 </font> seconds. Enemies standing in the wake of your \"Reality Fracture\" are dealt <font color='#FF3D3D'>%0.0f </font> magical damage every second.",
             "Params": [
-                "0.500*${s.CombatPower}+0.500*${s.CombatPower}*${s.ChaosAll}"
+                "0.500*${s.CombatPower}*(1 + ${s.ChaosAll})"
             ],
             "Weapon": "Chaos",
             "Type": "Passive",
@@ -3354,7 +3354,7 @@
             "Name": "X Factor",
             "Description": "You are the \"X\" Factor that connects anomalous events; evasive and confusing yet undeniably there.  Your \"Anomaly\" increases your Evade Chance by <font color='#FF6600'>40% </font> while channeling and for <font color='#FF6600'>5 </font> seconds after, enemies are <i>Debilitated</i> and when they stand up they are dealt <font color='#FF3D3D'>%0.0f </font> magical damage.<br>When the Evade Chance buff expires by timing out, all enemies who were damaged by \"Anomaly\" become confused and will miss their next attack made within <font color='#FF6600'>5 </font> seconds.<br>\"Anomaly\" now has a <font color='#FF6600'>60 </font> second cooldown.",
             "Params": [
-                "8.000*${s.CombatPower}+8.000*${s.CombatPower}*${s.ChaosAll}"
+                "8.000*${s.CombatPower}*(1 + ${s.ChaosAll})"
             ],
             "Weapon": "Chaos",
             "Type": "Passive",
@@ -3410,7 +3410,7 @@
             "Name": "Mass Evulsion",
             "Description": "Your \"Evulsion\" cascades from one enemy to the next. The target and any enemies near the target are pulled towards you, purged, and dealt <font color='#FF3D3D'>%0.0f </font> magical damage.",
             "Params": [
-                "Math.ceil(Math.max(2.500*${s.CombatPower}+2.500*${s.CombatPower}*${s.ChaosAll}, 1))"
+                "Math.ceil(Math.max(2.500*${s.CombatPower}*(1 + ${s.ChaosAll}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Passive",
@@ -3558,7 +3558,7 @@
             "Name": "Eye of the Ruinstorm",
             "Description": "You focus the potential energy of your Singularities causing them to detonate more slowly, but also improving the damage they deal to <font color='#FF3D3D'>%0.0f </font> magical damage.",
             "Params": [
-                "Math.ceil(Math.max(3.511*${s.CombatPower}+3.511*${s.CombatPower}*${s.ChaosAll}, 1))"
+                "Math.ceil(Math.max(3.511*${s.CombatPower}*(1 + ${s.ChaosAll}), 1))"
             ],
             "Weapon": "Chaos",
             "Type": "Passive",
@@ -3634,7 +3634,7 @@
             "Name": "Shock",
             "Description": "<b><i>Chain:</i></b> Jumps up to <font color='#FF6600'>8 </font> metres <font color='#FF6600'>5 </font> times, hitting up to <font color='#FF6600'>6 </font> enemies.<br><br>Send a shock of electricity through your target which chains to other nearby targets. Affected targets are dealt <font color='#FF3D3D'>%0.0f </font> magical damage.<br><br>Increases your heat level by <font color='#FF6600'>6 </font>.<br><br>Requires an Elementalism Focus in your Primary Weapon slot.",
             "Params": [
-                "Math.ceil(Math.max(0.588*${s.CombatPower}+0.588*${s.CombatPower}*${s.ElementalismAll}+0.588*${s.CombatPower}*${s.ElementalismBasic}+0.588*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(0.588*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismBasic} + ${s.AoE}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3654,7 +3654,7 @@
             "Name": "Fire Bolt",
             "Description": "Consumes <font color='#FF6600'>3 </font> Elemental Energy.<br>Fling a flaming bolt at your target dealing <font color='#FF3D3D'>%0.0f </font> magical damage.<br><br>Increases your heat level by <font color='#FF6600'>14 </font>.",
             "Params": [
-                "Math.ceil(Math.max(2.525*${s.CombatPower}+2.525*${s.CombatPower}*${s.ElementalismAll}+2.525*${s.CombatPower}*${s.ElementalismPower}, 1))"
+                "Math.ceil(Math.max(2.525*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismPower}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3674,7 +3674,7 @@
             "Name": "Chain Lightning",
             "Description": "<b><i>Chain:</i></b> Jumps up to <font color='#FF6600'>8 </font> metres <font color='#FF6600'>5 </font> times, hitting up to <font color='#FF6600'>6 </font> enemies.<br><br>Consumes <font color='#FF6600'>3 </font> Elemental Energy.<br>Send a crackling bolt of lightning through your target which then leaps to nearby enemies. Affected targets are dealt <font color='#FF3D3D'>%0.0f </font> magical damage.<br><br>Increases your heat level by <font color='#FF6600'>14 </font>.",
             "Params": [
-                "Math.ceil(Math.max(1.262*${s.CombatPower}+1.262*${s.CombatPower}*${s.ElementalismAll}+1.262*${s.CombatPower}*${s.ElementalismPower}+1.262*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(1.262*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismPower} + ${s.AoE}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3694,7 +3694,7 @@
             "Name": "Mjolnir",
             "Description": "Consumes <font color='#FF6600'>5 </font> Elemental Energy.<br>Harness the power of the mythical hammer to send devastating bolts of lightning at your target dealing <font color='#FF3D3D'>%0.0f </font> magical damage.<br><br>Increases your heat level by <font color='#FF6600'>21 </font>.",
             "Params": [
-                "Math.ceil(Math.max(3.425*${s.CombatPower}+3.425*${s.CombatPower}*${s.ElementalismAll}+3.425*${s.CombatPower}*${s.ElementalismPower}, 1))"
+                "Math.ceil(Math.max(3.425*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismPower}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3714,7 +3714,7 @@
             "Name": "Flash Freeze",
             "Description": "<b><i>PBAoE, TAoE:</i></b> Affects up to <font color='#FF6600'>3 </font> enemies in a <font color='#FF6600'>5 </font> metre range.<br><br>Consumes <font color='#FF6600'>2 </font> Elemental Energy.<br>Instantly freeze the area around you dealing <font color='#FF3D3D'>%0.0f </font> magical damage.  If you have a hostile target, also freeze the area around your target. Applies <i>Debilitated</i> and slows all damaged targets for <font color='#FF6600'>7 </font> seconds.<br><br>Reduces your heat level by <font color='#FF6600'>40 </font>. Can be used while Overheated to remove the Overheated effect.<br><br>When you Overheat, this ability's cooldown is reset.",
             "Params": [
-                "Math.ceil(Math.max(1.450*${s.CombatPower}+1.450*${s.CombatPower}*${s.ElementalismAll}+1.450*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(1.450*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.AoE}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3734,7 +3734,7 @@
             "Name": "Flicker",
             "Description": "Consumes <font color='#FF6600'>2 </font> Elemental Energy.<br>You vanish with a flicker of electricity and teleport <font color='#FF6600'>10 </font> metres forward. When you arrive at your destination, the area becomes electrified. Enemies standing in the area are dealt <font color='#FF3D3D'>%0.0f </font> magical damage every second. This ability can be activated a second time within <font color='#FF6600'>5 </font> seconds of the first use.<br><br>The first activation of this ability reduces your heat level by <font color='#FF6600'>40 </font>. Can be used while Overheated to remove the Overheated effect but you cannot activate this ability a second time. If the follow-up activation is used, it increases your heat level by <font color='#FF6600'>25 </font> heat.<br><br>When you Overheat, this ability's cooldown is reset.",
             "Params": [
-                "Math.ceil(Math.max(0.242*${s.CombatPower}+0.242*${s.CombatPower}*${s.ElementalismAll}, 1))"
+                "Math.ceil(Math.max(0.242*${s.CombatPower}*(1 + ${s.ElementalismAll}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3754,7 +3754,7 @@
             "Name": "Blizzard",
             "Description": "Consumes <font color='#FF6600'>4 </font> Elemental Energy.<br>Create an intense blizzard at the targeted point that lasts <font color='#FF6600'>8 </font> seconds. Every <font color='#FF6600'>0.5 </font> seconds it will deal <font color='#FF3D3D'>%0.0f </font> magical damage to up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius. Applies <i>Debilitated</i>. Targets that are hit <font color='#FF6600'>5 </font> times are rooted to the ground for <font color='#FF6600'>4 </font> seconds.<br><br>Reduces your heat level by <font color='#FF6600'>40 </font>. Can be used while Overheated to remove the Overheated effect.",
             "Params": [
-                "Math.ceil(Math.max(0.341*${s.CombatPower}+0.341*${s.CombatPower}*${s.ElementalismAll}+0.341*${s.CombatPower}*${s.ElementalismElite}, 1))"
+                "Math.ceil(Math.max(0.341*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismElite}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3774,7 +3774,7 @@
             "Name": "Fireball",
             "Description": "Launch a ball of flame at your target dealing <font color='#FF3D3D'>%0.0f </font> magical damage.<br><br>Increases your heat level by <font color='#FF6600'>6 </font>.<br><br>Requires an Elementalism Focus in your Primary Weapon slot.",
             "Params": [
-                "Math.ceil(Math.max(1.175*${s.CombatPower}+1.175*${s.CombatPower}*${s.ElementalismAll}+1.175*${s.CombatPower}*${s.ElementalismBasic}, 1))"
+                "Math.ceil(Math.max(1.175*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismBasic}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3796,7 +3796,7 @@
             "Params": [
                 "Math.floor((((${s.WeaponPower}+${s.AttackProfiency})*0.25)+650))",
                 "0.087*${s.CombatPower}",
-                "0.580*${s.CombatPower}+0.580*${s.CombatPower}*${s.AoE}"
+                "0.580*${s.CombatPower}*(1 + ${s.AoE})"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3816,7 +3816,7 @@
             "Name": "Ice Beam",
             "Description": "Consumes <font color='#FF6600'>4 </font> Elemental Energy.<br>Focus your energy to unleash a gelid beam of frost at your target dealing <font color='#FF3D3D'>%0.0f </font> magical damage and slowing its movement. Applies <i>Debilitated</i>.<br><br>Reduces your heat level by <font color='#FF6600'>40 </font>. Can be used while Overheated to remove the Overheated effect.",
             "Params": [
-                "Math.ceil(Math.max(6.975*${s.CombatPower}+6.975*${s.CombatPower}*${s.ElementalismAll}+6.975*${s.CombatPower}*${s.ElementalismElite}, 1))"
+                "Math.ceil(Math.max(6.975*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismElite}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3854,7 +3854,7 @@
             "Name": "Crystallised Frost",
             "Description": "Consumes <font color='#FF6600'>2 </font> Elemental Energy.<br>Summon a crystallised manifestation of ice at your location that lasts <font color='#FF6600'>9 </font> seconds. Every <font color='#FF6600'>3 </font> seconds it will hit up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius, dealing <font color='#FF3D3D'>%0.0f </font> magical damage. Applies <i>Debilitated</i>.<br><br>Reduces your heat level by <font color='#FF6600'>10 </font> when summoned and if you are standing within the cold area when a damage pulse occurs. Can be used while Overheated.",
             "Params": [
-                "Math.ceil(Math.max(0.362*${s.CombatPower}+0.362*${s.CombatPower}*${s.ElementalismAll}+0.362*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(0.362*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.AoE}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3874,7 +3874,7 @@
             "Name": "Crystallised Storm",
             "Description": "Consumes <font color='#FF6600'>2 </font> Elemental Energy.<br>Summon a crystallised manifestation of lightning at the targeted point that lasts <font color='#FF6600'>10 </font> seconds. Every second, it deals <font color='#FF3D3D'>%0.0f </font> magical damage to nearby enemies as lightning jumps between them.<br><br>When cast, and after <font color='#FF6600'>5 </font> seconds, if your heat level is above <font color='#FF6600'>30 </font>, up to <font color='#FF6600'>6 </font> enemies in the area have <font color='#FF6600'>1 </font> beneficial effect purged from them.<br><br>Increases your heat level by <font color='#FF6600'>25 </font>.",
             "Params": [
-                "Math.ceil(Math.max(0.132*${s.CombatPower}+0.132*${s.CombatPower}*${s.ElementalismAll}+0.132*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(0.132*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.AoE}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3894,7 +3894,7 @@
             "Name": "Inferno",
             "Description": "<b><i>TAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around the target.<br><br>Consumes <font color='#FF6600'>5 </font> Elemental Energy.<br>Create a blazing inferno at the target's location that deals <font color='#FF3D3D'>%0.0f </font> magical damage.<br><br>Increases your heat level by <font color='#FF6600'>21 </font>.",
             "Params": [
-                "Math.ceil(Math.max(1.712*${s.CombatPower}+1.712*${s.CombatPower}*${s.ElementalismAll}+1.712*${s.CombatPower}*${s.ElementalismPower}+1.712*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(1.712*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismPower} + ${s.AoE}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3914,7 +3914,7 @@
             "Name": "Overload",
             "Description": "<b><i>Channelled:</i></b> Every second for <font color='#FF6600'>3 </font> seconds.<br><b><i>GTAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>10 </font> metre radius around the targeted point.<br><br>Consumes <font color='#FF6600'>4 </font> Elemental Energy.<br>Blast the targeted area with a barrage of elemental energy dealing <font color='#FF3D3D'>%0.0f </font> magical damage per hit. The cold portion of this ability applies <i>Debilitated</i>. The electrical portion of this ability purges <font color='#FF6600'>2 </font> beneficial effects.<br><br>The cold portion of this ability reduces your heat level by <font color='#FF6600'>40 </font>. The fire and electrical portion of this ability each increase your heat level by <font color='#FF6600'>10 </font>. Can be used while Overheated to remove the Overheated effect.",
             "Params": [
-                "Math.ceil(Math.max(2.717*${s.CombatPower}+2.717*${s.CombatPower}*${s.ElementalismAll}+2.717*${s.CombatPower}*${s.ElementalismElite}+2.717*${s.CombatPower}*${s.AoE}, 1))"
+                "Math.ceil(Math.max(2.717*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismElite} + ${s.AoE}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Active",
@@ -3952,7 +3952,7 @@
             "Name": "Static Charge",
             "Description": "Your \"Chain Lightning\" charges targets with static energy for <font color='#FF6600'>3 </font> seconds. The next time you damage a static-charged target with \"Chain Lightning\" the static energy is discharged dealing <font color='#FF3D3D'>%0.0f </font> magical damage to the target and enemies near the target.",
             "Params": [
-                "Math.ceil(Math.max(0.778*${s.CombatPower}+0.778*${s.CombatPower}*${s.ElementalismAll}+0.778*${s.CombatPower}*${s.ElementalismPower}, 1))"
+                "Math.ceil(Math.max(0.778*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismPower}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Passive",
@@ -4047,7 +4047,7 @@
             "Description": "Empower your \"Living Flame\", increasing its attack damage to <font color='#FF3D3D'>%i </font> and the damage of Flame Flare to <font color='#FF3D3D'>%i </font>.  While you have a <font color='#FF6600'>Living Flame </font> active, the cast time of \"Living Flame\" is reduced by <font color='#FF6600'>1 </font> second.<br><br><font color='#FF6600'>Living Flame </font> will provoke enemies who attack you, and when you deal fire or lightning Elemental damage your <font color='#FF6600'>Living Flame </font> is healed for <font color='#00FF33'>35% </font> of the damage done. The provoke effect does not work against Dungeon, Lair, or Raid monsters.",
             "Params": [
                 "0.162*${s.CombatPower}",
-                "1.080*${s.CombatPower}+1.080*${s.CombatPower}*${s.AoE}"
+                "1.080*${s.CombatPower}*(1 + ${s.AoE})"
             ],
             "Weapon": "Elementalism",
             "Type": "Passive",
@@ -4067,7 +4067,7 @@
             "Name": "Discharge",
             "Description": "When \"Crystallised Storm\" purges a beneficial effect from a target or damages an enemy with a beneficial effect that can be purged, the magical energy is discharged violently dealing <font color='#FF3D3D'>%0.0f </font> magical damage to the target and nearby enemies. This effect has a <font color='#FF6600'>33% </font> chance to trigger on targets who do not have any beneficial effects.",
             "Params": [
-                "Math.ceil(Math.max(0.689*${s.CombatPower}+0.689*${s.CombatPower}*${s.ElementalismAll}+0.689*${s.CombatPower}*${s.ElementalismPower}, 1))"
+                "Math.ceil(Math.max(0.689*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismPower}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Passive",
@@ -4087,7 +4087,7 @@
             "Name": "Volatile Current",
             "Description": "You reappear with a blast of electrical energy when using \"Flicker.\" Immediately after arriving at your destination, you stun any nearby enemies for <font color='#FF6600'>3 </font> seconds and deal <font color='#FF3D3D'>%0.0f </font> magical damage.",
             "Params": [
-                "Math.ceil(Math.max(1.250*${s.CombatPower}+1.250*${s.CombatPower}*${s.ElementalismAll}, 1))"
+                "Math.ceil(Math.max(1.250*${s.CombatPower}*(1 + ${s.ElementalismAll}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Passive",
@@ -4163,8 +4163,8 @@
             "Name": "Blast Wave",
             "Description": "When \"Flashpoint\" expires, you expel the increased heat from your body dealing <font color='#FF3D3D'>%0.0f - %0.0f </font> magical damage to nearby enemies. The damage dealt increases based on your heat level when\"Flashpoint\" expires.",
             "Params": [
-                "Math.ceil(Math.max(1.500*${s.CombatPower}+1.500*${s.CombatPower}*${s.ElementalismAll}, 1))",
-                "Math.ceil(Math.max(3.000*${s.CombatPower}+3.000*${s.CombatPower}*${s.ElementalismAll}, 1))"
+                "Math.ceil(Math.max(1.500*${s.CombatPower}*(1 + ${s.ElementalismAll}), 1))",
+                "Math.ceil(Math.max(3.000*${s.CombatPower}*(1 + ${s.ElementalismAll}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Passive",
@@ -4184,8 +4184,8 @@
             "Name": "Elemental Force",
             "Description": "Harness the force of the elements when you use \"Overload.\" The cold portion of this attack's Heat reduction is increased to <font color='#FF6600'>50 </font>, the electrical portion causes enemies in the area take an additional <font color='#FF3D3D'>%0.0f </font> magical damage, and the fire portion knocks down enemies for <font color='#FF6600'>3 </font> seconds and sets them ablaze dealing <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>6 </font> seconds.",
             "Params": [
-                "Math.ceil(Math.max(0.833*${s.CombatPower}+0.833*${s.CombatPower}*${s.ElementalismAll}, 1))",
-                "Math.ceil(Math.max(0.139*${s.CombatPower}+0.139*${s.CombatPower}*${s.ElementalismAll}, 1))"
+                "Math.ceil(Math.max(0.833*${s.CombatPower}*(1 + ${s.ElementalismAll}), 1))",
+                "Math.ceil(Math.max(0.139*${s.CombatPower}*(1 + ${s.ElementalismAll}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Passive",
@@ -4223,8 +4223,8 @@
             "Name": "Elemental Control",
             "Description": "You have mastered the inner workings of fire and electricity. <br><br>Whenever you deal damage with an Elemental fire ability, you set the target on fire dealing <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>5 </font> seconds. <br><br>Whenever you deal damage with an Elemental electrical ability you create an electrical current within the target for <font color='#FF6600'>3 </font> seconds. If you damage the target again while this effect is active, the target and nearby enemies are dealt <font color='#FF3D3D'>%0.0f </font> magical damage.",
             "Params": [
-                "Math.ceil(Math.max(0.050*${s.CombatPower}+0.050*${s.CombatPower}*${s.ElementalismAll}, 1))",
-                "Math.ceil(Math.max(0.250*${s.CombatPower}+0.250*${s.CombatPower}*${s.ElementalismAll}+0.250*${s.CombatPower}*${s.ElementalismPower}, 1))"
+                "Math.ceil(Math.max(0.050*${s.CombatPower}*(1 + ${s.ElementalismAll}), 1))",
+                "Math.ceil(Math.max(0.250*${s.CombatPower}*(1 + ${s.ElementalismAll} + ${s.ElementalismPower}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Passive",
@@ -4244,7 +4244,7 @@
             "Name": "Calorimetry",
             "Description": "Your internal temperature runs hotter than the average person. Your base out of combat heat level is increased to <font color='#FF6600'>15 </font>. Also, your first Elementalism attack when entering combat deals an additional <font color='#FF3D3D'>%0.0f </font> magical damage. While in combat, this bonus damage effect can occur once every <font color='#FF6600'>10 </font> seconds.",
             "Params": [
-                "Math.ceil(Math.max(0.833*${s.CombatPower}+0.833*${s.CombatPower}*${s.ElementalismAll}, 1))"
+                "Math.ceil(Math.max(0.833*${s.CombatPower}*(1 + ${s.ElementalismAll}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Passive",
@@ -4340,7 +4340,7 @@
             "Name": "Lingering Frost",
             "Description": "Your cold abilities provide a lingering presence of frost, cooling you down afterward and leaving your foes frostbitten. Enemies damaged by your cold abilities are dealt <font color='#FF3D3D'>%0.0f </font> magical damage every second for <font color='#FF6600'>5 </font> seconds. Also, after using any cold ability, you will lose an additional <font color='#FF6600'>2 </font> heat every second for <font color='#FF6600'>5 </font> seconds and nearby enemies have their hate towards you reduced.",
             "Params": [
-                "Math.ceil(Math.max(0.250*${s.CombatPower}+0.250*${s.CombatPower}*${s.ElementalismAll}, 1))"
+                "Math.ceil(Math.max(0.250*${s.CombatPower}*(1 + ${s.ElementalismAll}), 1))"
             ],
             "Weapon": "Elementalism",
             "Type": "Passive",
@@ -4362,7 +4362,7 @@
             "Name": "Scattershot",
             "Description": "<b><i>Cone:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>60 </font> degree <font color='#FF6600'>7 </font> metre cone in front of you.<br><br>Fire a blast of shot from your shotgun at enemies in front of you dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Consumes <font color='#FF6600'>1 </font> shell.<br>When reloading your Shotgun, the slot this ability is placed into will always be the previous loaded shell type.<br><br>Requires a Shotgun in your Primary Weapon slot.",
             "Params": [
-                "0.587*${s.CombatPower}+0.587*${s.CombatPower}*${s.ShotgunAll}+0.587*${s.CombatPower}*${s.ShotgunBasic}+0.587*${s.CombatPower}*${s.AoE}"
+                "0.587*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunBasic} + ${s.AoE})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4382,7 +4382,7 @@
             "Name": "Kneecapper",
             "Description": "<b><i>Cone:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>60 </font> degree <font color='#FF6600'>9 </font> metre cone in front of you.<br><br>Consumes <font color='#FF6600'>4 </font> Shotgun Energy.<br>Fire a concentrated shot of power from your shotgun towards the ground creating a blast wave in front of you, knocking enemies down, dealing <font color='#FF3D3D'>%0.0f </font> physical damage, and slowing their movement.<br><br>For <font color='#FF6600'>8 </font> seconds afterward, all attacks against you are <font color='#FF6600'>27.0% - 38.4% </font> more likely to glance. This bonus increases based on the number of shotgun shells consumed.<br><br>Consumes all shells.",
             "Params": [
-                "6.900*${s.CombatPower}+6.900*${s.CombatPower}*${s.ShotgunAll}+6.900*${s.CombatPower}*${s.ShotgunElite}+6.900*${s.CombatPower}*${s.AoE}"
+                "6.900*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunElite} + ${s.AoE})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4402,7 +4402,7 @@
             "Name": "Pump Action",
             "Description": "Blast an enemy with a shot from your shotgun dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Consumes <font color='#FF6600'>1 </font> shell.<br>When reloading your Shotgun, the slot this ability is placed into will always be the previous loaded shell type.<br><br>Requires a Shotgun in your Primary Weapon slot.",
             "Params": [
-                "1.175*${s.CombatPower}+1.175*${s.CombatPower}*${s.ShotgunAll}+1.175*${s.CombatPower}*${s.ShotgunBasic}"
+                "1.175*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunBasic})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4422,7 +4422,7 @@
             "Name": "Both Barrels",
             "Description": "<b><i>Cone:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>60 </font> degree <font color='#FF6600'>7 </font> metre cone in front of you.<br><br>Consumes <font color='#FF6600'>3 </font> Shotgun Energy.<br>Unleash a deadly diffused blast from your shotgun dealing <font color='#FF3D3D'>%0.0f </font> physical damage to enemies in front of you.<br><br>Consumes <font color='#FF6600'>1 </font> shell.",
             "Params": [
-                "1.263*${s.CombatPower}+1.263*${s.CombatPower}*${s.ShotgunAll}+1.263*${s.CombatPower}*${s.ShotgunPower}+1.263*${s.CombatPower}*${s.AoE}"
+                "1.263*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunPower} + ${s.AoE})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4442,7 +4442,7 @@
             "Name": "HEAT Round",
             "Description": "<b><i>TAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around the target.<br><br>Consumes <font color='#FF6600'>5 </font> Shotgun Energy.<br>Launch a high-explosive anti-tank round at your target dealing <font color='#FF3D3D'>%0.0f </font> physical damage to any enemies caught in the blast.<br><br>Consumes <font color='#FF6600'>1 </font> shell.",
             "Params": [
-                "1.712*${s.CombatPower}+1.712*${s.CombatPower}*${s.ShotgunAll}+1.712*${s.CombatPower}*${s.ShotgunPower}+1.712*${s.CombatPower}*${s.AoE}"
+                "1.712*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunPower} + ${s.AoE})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4462,7 +4462,7 @@
             "Name": "Rocket Pod",
             "Description": "Consumes <font color='#FF6600'>3 </font> Shotgun Energy.<br>Launch a miniaturised rocket at your target dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Consumes <font color='#FF6600'>1 </font> shell.",
             "Params": [
-                "2.525*${s.CombatPower}+2.525*${s.CombatPower}*${s.ShotgunAll}+2.525*${s.CombatPower}*${s.ShotgunPower}"
+                "2.525*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunPower})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4482,7 +4482,7 @@
             "Name": "Full Salvo",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>2.5 </font> seconds.<br><b><i>Cone:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>9 </font> metre long <font color='#FF6600'>60 </font> degree cone in front of you.<br><br>Consumes <font color='#FF6600'>4 </font> Shotgun Energy.<br>Lay waste to all who stand before you with repeated blasts from your shotgun dealing <font color='#FF3D3D'>%0.0f </font> physical damage per hit.<br><br>Consumes <font color='#FF6600'>5 </font> shells.",
             "Params": [
-                "1.513*${s.CombatPower}+1.513*${s.CombatPower}*${s.ShotgunAll}+1.513*${s.CombatPower}*${s.ShotgunElite}+1.513*${s.CombatPower}*${s.AoE}"
+                "1.513*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunElite} + ${s.AoE})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4502,7 +4502,7 @@
             "Name": "Raging Shot",
             "Description": "Consumes <font color='#FF6600'>5 </font> Shotgun Energy.<br>Concentrate your power into a full-force shotgun blast dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Consumes <font color='#FF6600'>1 </font> shell.",
             "Params": [
-                "3.425*${s.CombatPower}+3.425*${s.CombatPower}*${s.ShotgunAll}+3.425*${s.CombatPower}*${s.ShotgunPower}"
+                "3.425*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunPower})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4522,7 +4522,7 @@
             "Name": "CQC",
             "Description": "Consumes <font color='#FF6600'>2 </font> Shotgun Energy.<br>Bash an enemy with the stock of your shotgun, knocking them down. Follow up with a close-range shotgun blast dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>This ability has a <font color='#FF6600'>3 </font> metre range.<br><br>Consumes <font color='#FF6600'>1 </font> shell.",
             "Params": [
-                "2.900*${s.CombatPower}+2.900*${s.CombatPower}*${s.ShotgunAll}"
+                "2.900*${s.CombatPower}*(1 + ${s.ShotgunAll})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4560,8 +4560,8 @@
             "Name": "Bombardment",
             "Description": "Consumes <font color='#FF6600'>4 </font> Shotgun Energy.<br>Fire all of your shells into the air and cause them to rain down at the targeted point. A shell will strike a random enemy within <font color='#FF6600'>7 </font> metres every <font color='#FF6600'>1.25 </font> seconds for <font color='#FF6600'>10 </font> seconds.<br><br>Affected enemies are dealt <font color='#FF3D3D'>%0.0f </font> physical damage and are <i>Exposed</i>. Other enemies within <font color='#FF6600'>3 </font> metres of the target are dealt <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Consumes <font color='#FF6600'>6 </font> shells.",
             "Params": [
-                "0.700*${s.CombatPower}+0.700*${s.CombatPower}*${s.ShotgunAll}+0.700*${s.CombatPower}*${s.ShotgunElite}",
-                "0.360*${s.CombatPower}+0.360*${s.CombatPower}*${s.ShotgunAll}+0.360*${s.CombatPower}*${s.ShotgunElite}+0.360*${s.CombatPower}*${s.AoE}"
+                "0.700*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunElite})",
+                "0.360*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunElite} + ${s.AoE})"
             ],
             "Weapon": "Shotgun",
             "Type": "Active",
@@ -4635,7 +4635,7 @@
             "Name": "Sonic Blast",
             "Description": "<b><i>Signature Ability</i></b><br><b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>10 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>3 </font> Shotgun Energy.<br>Unleash a defeaning blast, dealing <font color='#FF3D3D'>%0.0f </font> damage and <font color='#FF3D3D'>%0.0f </font> damage every second for <font color='#FF6600'>12 </font> seconds to nearby enemies, and goading them into attacking you for <font color='#FF6600'>6 </font> seconds. Additionally, your Protection is increased by <font color='#FF6600'>8200 </font> for <font color='#FF6600'>6 </font> seconds.<br><br>Successfully glancing incoming attacks, and reloading your shotgun reduce the remaining cooldown time.<br>This signature ability scales with tanking stats, and shares a cooldown with other signature abilities.",
             "Params": [
-                "3.350*${s.CombatPower}+3.350*${s.CombatPower}*${s.HammerAll}",
+                "3.350*${s.CombatPower}*(1 + ${s.HammerAll})",
                 "Math.max(1, ((0.01+Math.max(0,${s.Defense}+${s.Evade}-1500) *0.000183077)*(${s.Defense}+${s.Evade})) * Math.max(0.01, ((100-${s.TankAlloc}-${s.HealAlloc})/100)))"
             ],
             "Weapon": "Shotgun",
@@ -4674,7 +4674,7 @@
             "Name": "Blast Barrels",
             "Description": "Concentrate additional power into your \"Both Barrels\" ability, causing this ability to perform an additional hit dealing <font color='#FF3D3D'>%0.0f </font> physical damage to each target.",
             "Params": [
-                "0.389*${s.CombatPower}+0.389*${s.CombatPower}*${s.ShotgunAll}"
+                "0.389*${s.CombatPower}*(1 + ${s.ShotgunAll})"
             ],
             "Weapon": "Shotgun",
             "Type": "Passive",
@@ -4712,7 +4712,7 @@
             "Name": "Point Blank Shot",
             "Description": "Get up close and personal with \"Raging Shot,\" increasing the damage dealt to <font color='#FF3D3D'>%0.0f </font> physical damage to targets within <font color='#FF6600'>3 </font> metres.",
             "Params": [
-                "4.008*${s.CombatPower}+4.008*${s.CombatPower}*${s.ShotgunAll}+4.008*${s.CombatPower}*${s.ShotgunPower}"
+                "4.008*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunPower})"
             ],
             "Weapon": "Shotgun",
             "Type": "Passive",
@@ -4786,7 +4786,7 @@
             "Name": "Fire at Will",
             "Description": "Keep firing! When you activate \"Opening Shot\" you gain a beneficial effect that causes your Shotgun attacks to deal <font color='#FF3D3D'>%0.0f </font> additional physical damage until an enemy deals damage to you. Also, when you critically hit with a Shotgun ability while \"Opening Shot\" is active you reload <font color='#FF6600'>1 </font> shell.",
             "Params": [
-                "0.215*${s.CombatPower}+0.215*${s.CombatPower}*${s.ShotgunAll}"
+                "0.215*${s.CombatPower}*(1 + ${s.ShotgunAll})"
             ],
             "Weapon": "Shotgun",
             "Type": "Passive",
@@ -4806,7 +4806,7 @@
             "Name": "Cleanup Crew",
             "Description": "Whenever \"Cleanup\" cleanses a detrimental effect from you or a group member, or purges a beneficial effect from an enemy, you and your group become empowered: For the next <font color='#FF6600'>6 </font> seconds, all attacks deal an additional <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.417*${s.CombatPower}+0.417*${s.CombatPower}*${s.ShotgunAll}"
+                "0.417*${s.CombatPower}*(1 + ${s.ShotgunAll})"
             ],
             "Weapon": "Shotgun",
             "Type": "Passive",
@@ -4826,8 +4826,8 @@
             "Name": "Supremacy",
             "Description": "Your skill with explosives enables you to utilize \"Bombardment\" to intercept and partially deflect incoming attacks with shrapnel.  While you stand in your \"Bombardment\", you gain <font color='#FF6600'>40000 </font> Protection and are immune to crowd control effects.  While your allies stand in your \"Bombardment\", they gain <font color='#FF6600'>7100 </font> Protection and are immune to snare and root effects.<br>Damage done by \"Bombardment\" is increased to <font color='#FF3D3D'>%i </font> to the primary target, and <font color='#FF3D3D'>%i </font> to proximal targets.<br>\"Bombardment\" now has a <font color='#FF6600'>60 </font> second cooldown and no longer requires or consumes shells.",
             "Params": [
-                "1.275*${s.CombatPower}+1.275*${s.CombatPower}*${s.ShotgunAll}+1.275*${s.CombatPower}*${s.ShotgunElite}",
-                "0.637*${s.CombatPower}+0.637*${s.CombatPower}*${s.ShotgunAll}+0.637*${s.CombatPower}*${s.ShotgunElite}+0.637*${s.CombatPower}*${s.AoE}"
+                "1.275*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunElite})",
+                "0.637*${s.CombatPower}*(1 + ${s.ShotgunAll} + ${s.ShotgunElite} + ${s.AoE})"
             ],
             "Weapon": "Shotgun",
             "Type": "Passive",
@@ -4883,7 +4883,7 @@
             "Name": "Fatal Funnel",
             "Description": "Your mastery of \"CQC\" allows you to deal with crowds more effectively. Enemies within <font color='#FF6600'>5 </font> metres of the target are also fully affected by this ability. Additionally, any target who is successfully interrupted by this attack is dealt <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "2.500*${s.CombatPower}+2.500*${s.CombatPower}*${s.ShotgunAll}"
+                "2.500*${s.CombatPower}*(1 + ${s.ShotgunAll})"
             ],
             "Weapon": "Shotgun",
             "Type": "Passive",
@@ -5067,7 +5067,7 @@
             "Name": "Controlled Shooting",
             "Description": "<b><i>Chain:</i></b> Jumps up to <font color='#FF6600'>8 </font> metres <font color='#FF6600'>5 </font> times, hitting up to <font color='#FF6600'>6 </font> enemies.<br><br>Consumes <font color='#FF6600'>3 </font> Pistol Energy.<br>Fire your shot at your target in such a way that it rolls through them and nearby enemies. Affected targets are dealt <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "1.263*${s.CombatPower}+1.263*${s.CombatPower}*${s.PistolAll}+1.263*${s.CombatPower}*${s.PistolPower}+1.263*${s.CombatPower}*${s.AoE}"
+                "1.263*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolPower} + ${s.AoE})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5087,7 +5087,7 @@
             "Name": "Trick Shot",
             "Description": "<b><i>TAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around the target. <br><br>Consumes <font color='#FF6600'>4 </font> Pistol Energy.<br>Fire a pair of swirling bullets at your target. The bullets explode on impact dealing <font color='#FF3D3D'>%0.0f </font> physical damage to the target and nearby enemies. Applies <i>Exposed</i>. Applies <i>Debilitated</i>.",
             "Params": [
-                "5.600*${s.CombatPower}+5.600*${s.CombatPower}*${s.PistolAll}+5.600*${s.CombatPower}*${s.PistolElite}+5.600*${s.CombatPower}*${s.AoE}"
+                "5.600*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolElite} + ${s.AoE})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5107,7 +5107,7 @@
             "Name": "Unload",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.5 </font> seconds for <font color='#FF6600'>2.5 </font> seconds.<br><br>Consumes <font color='#FF6600'>5 </font> Pistol Energy.<br>Empty the clips of both of your pistols into your target, dealing <font color='#FF3D3D'>%0.0f </font> physical damage per hit.",
             "Params": [
-                "1.038*${s.CombatPower}+1.038*${s.CombatPower}*${s.PistolAll}+1.038*${s.CombatPower}*${s.PistolPower}"
+                "1.038*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolPower})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5127,10 +5127,10 @@
             "Name": "All In",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.3 </font> seconds for <font color='#FF6600'>3 </font> seconds.<br><br>Consumes <font color='#FF6600'>4 </font> Pistol Energy.<br>Unleash an all-out hail of fire at your target.<br>&nbsp;&nbsp;\u2022First <font color='#FF6600'>3 </font> hits: <font color='#FF3D3D'>%0.0f </font> physical damage. <br><br>&nbsp;&nbsp;\u2022Next <font color='#FF6600'>3 </font> hits: <font color='#FF3D3D'>%0.0f </font> physical damage. <br><br>&nbsp;&nbsp;\u2022Next <font color='#FF6600'>3 </font> hits: <font color='#FF3D3D'>%0.0f </font> physical damage in a <font color='#FF6600'>5 </font> metre area around the target. <br><br>&nbsp;&nbsp;\u2022Final hit: <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.543*${s.CombatPower}+0.543*${s.CombatPower}*${s.PistolAll}+0.543*${s.CombatPower}*${s.PistolElite}",
-                "0.679*${s.CombatPower}+0.679*${s.CombatPower}*${s.PistolAll}+0.679*${s.CombatPower}*${s.PistolElite}",
-                "0.815*${s.CombatPower}+0.815*${s.CombatPower}*${s.PistolAll}+0.815*${s.CombatPower}*${s.PistolElite}",
-                "2.037*${s.CombatPower}+2.037*${s.CombatPower}*${s.PistolAll}+2.037*${s.CombatPower}*${s.PistolElite}"
+                "0.543*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolElite})",
+                "0.679*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolElite})",
+                "0.815*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolElite})",
+                "2.037*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolElite})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5150,7 +5150,7 @@
             "Name": "Dual Shot",
             "Description": "Consumes <font color='#FF6600'>3 </font> Pistol Energy.<br>Charge up and simultaneously fire both of your pistols at your target dealing <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "2.525*${s.CombatPower}+2.525*${s.CombatPower}*${s.PistolAll}+2.525*${s.CombatPower}*${s.PistolPower}"
+                "2.525*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolPower})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5170,7 +5170,7 @@
             "Name": "Kill Blind",
             "Description": "Consumes <font color='#FF6600'>2 </font> Pistol Energy.<br>Raise the odds of killing your target by stunning and shooting them with each pistol. The shot deals <font color='#FF3D3D'>%0.0f </font> physical damage and extends the duration of any active matched chamber damage bonus by <font color='#FF6600'>1.5 </font> seconds. Applies <i>Exposed</i>. Applies <i>Debilitated</i>.",
             "Params": [
-                "0.819*${s.CombatPower}+0.819*${s.CombatPower}*${s.PistolAll}"
+                "0.819*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5208,7 +5208,7 @@
             "Name": "Bullet Ballet",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.2 </font> seconds for <font color='#FF6600'>2 </font> seconds.<br><b><i>PBAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>10 </font> metre radius around you.<br><br>Consumes <font color='#FF6600'>4 </font> Pistol Energy.<br>In an exquisite display of gunmanship, fire a rapid succession of shots at all nearby targets dealing <font color='#FF3D3D'>%0.0f </font> physical damage per hit and slowing their movement.<br>You are unable to move while channeling this ability.",
             "Params": [
-                "0.697*${s.CombatPower}+0.697*${s.CombatPower}*${s.PistolAll}+0.697*${s.CombatPower}*${s.PistolElite}+0.697*${s.CombatPower}*${s.AoE}"
+                "0.697*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolElite} + ${s.AoE})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5228,7 +5228,7 @@
             "Name": "Charged Blast",
             "Description": "<b><i>TAoE:</i></b> Affects up to <font color='#FF6600'>5 </font> enemies in a <font color='#FF6600'>6 </font> metre radius around the target.<br><br>Consumes <font color='#FF6600'>5 </font> Pistol Energy.<br>Send a wave of volatile energy through the ground towards your target. The energy detonates upon arrival dealing <font color='#FF3D3D'>%0.0f </font> physical damage to the target and nearby enemies.",
             "Params": [
-                "1.712*${s.CombatPower}+1.712*${s.CombatPower}*${s.PistolAll}+1.712*${s.CombatPower}*${s.PistolPower}+1.712*${s.CombatPower}*${s.AoE}"
+                "1.712*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolPower} + ${s.AoE})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5248,7 +5248,7 @@
             "Name": "Seeking Bullet",
             "Description": "<b><i>Chain:</i></b> Jumps up to <font color='#FF6600'>8 </font> metres <font color='#FF6600'>5 </font> times, hitting up to <font color='#FF6600'>6 </font> enemies.<br><br>Fire shots from your pistols that seek out and damage enemies for <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Requires Pistols in your Primary Weapon slot.",
             "Params": [
-                "0.587*${s.CombatPower}+0.587*${s.CombatPower}*${s.PistolAll}+0.587*${s.CombatPower}*${s.PistolBasic}+0.587*${s.CombatPower}*${s.AoE}"
+                "0.587*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolBasic} + ${s.AoE})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5268,7 +5268,7 @@
             "Name": "Hair Trigger",
             "Description": "Snap a quick shot at your target with your pistol, dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Requires Pistols in your Primary Weapon slot.",
             "Params": [
-                "1.175*${s.CombatPower}+1.175*${s.CombatPower}*${s.PistolAll}+1.175*${s.CombatPower}*${s.PistolBasic}"
+                "1.175*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.PistolBasic})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5288,7 +5288,7 @@
             "Name": "Clean Slate",
             "Description": "Consumes <font color='#FF6600'>2 </font> Pistol Energy.<br>Channel your energy for restorative purposes, cleansing yourself and all group members of <font color='#FF6600'>3 </font> detrimental effects and healing them for <font color='#00FF33'>%0.0f </font>. The amount healed increases based on your Attack Rating.",
             "Params": [
-                "2.025*${s.CombatPower}+2.025*${s.CombatPower}*${s.PistolAll}"
+                "2.025*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5326,7 +5326,7 @@
             "Name": "Six Line",
             "Description": "Consumes <font color='#FF6600'>2 </font> Pistol Energy.<br>Take a chance and set your left pistol chamber to red for <font color='#FF6600'>6 </font> seconds. During this time, all of your pistol attacks deal an additional <font color='#FF3D3D'>%0.0f </font> physical damage. This ability does not trigger and is not affected by global recharge time.",
             "Params": [
-                "0.377*${s.CombatPower}+0.377*${s.CombatPower}*${s.PistolAll}"
+                "0.377*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5346,7 +5346,7 @@
             "Name": "Ricochet",
             "Description": "Consumes <font color='#FF6600'>2 </font> Pistol Energy.<br>Your mastery of angles and trajectories allows you to ricochet your bullets from one target to another for <font color='#FF6600'>6 </font> seconds. Your target and nearby enemies are dealt an additional <font color='#FF3D3D'>%0.0f </font> physical damage whenever you deal damage with Pistol abilities. This ability does not trigger and is not affected by global recharge time.",
             "Params": [
-                "0.242*${s.CombatPower}+0.242*${s.CombatPower}*${s.PistolAll}+0.242*${s.CombatPower}*${s.AoE}"
+                "0.242*${s.CombatPower}*(1 + ${s.PistolAll} + ${s.AoE})"
             ],
             "Weapon": "Pistol",
             "Type": "Active",
@@ -5438,9 +5438,9 @@
             "Name": "Royal Flush",
             "Description": "You know the best time to go \"All In\" causing this ability to have additional effects if you have a set of matching chambers.<br><br>&nbsp;&nbsp;\u2022<tspan style='text-decoration: underline;'>Double White</tspan>: The target and nearby enemies are dealt an additional <font color='#FF3D3D'>%0.0f </font> physical damage. Applies <i>Exposed</i>. Applies <i>Debilitated</i>.<br><br>&nbsp;&nbsp;\u2022<tspan style='text-decoration: underline;'>Double Blue</tspan>: The target and nearby enemies are dealt an additional <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>&nbsp;&nbsp;\u2022<tspan style='text-decoration: underline;'>Double Red</tspan>: The target and nearby enemies are dealt an additional <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.667*${s.CombatPower}+0.667*${s.CombatPower}*${s.PistolAll}",
-                "0.833*${s.CombatPower}+0.833*${s.CombatPower}*${s.PistolAll}",
-                "0.917*${s.CombatPower}+0.917*${s.CombatPower}*${s.PistolAll}"
+                "0.667*${s.CombatPower}*(1 + ${s.PistolAll})",
+                "0.833*${s.CombatPower}*(1 + ${s.PistolAll})",
+                "0.917*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5478,7 +5478,7 @@
             "Name": "Rehabilitation",
             "Description": "Your \"Clean Slate\" helps your allies recover more efficiently. If \"Clean Slate\" cleanses an ally of a detrimental effect, the healing output is increased to <font color='#00FF33'>%0.0f </font>.",
             "Params": [
-                "4.050*${s.CombatPower}+4.050*${s.CombatPower}*${s.PistolAll}"
+                "4.050*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5516,7 +5516,7 @@
             "Name": "Focused Fire",
             "Description": "When you use \"Kill Blind\" you prepare for your next move. If you do not have a locked set of matching chambers, you gain a Double White set. Additionally, the damage of \"Kill Blind\" is increased to <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "3.319*${s.CombatPower}+3.319*${s.CombatPower}*${s.PistolAll}"
+                "3.319*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5537,8 +5537,8 @@
             "Description": "Your \"Trick Shot\" disables and confuses the enemies it damages causing them to become stunned, rooted, or snared.  \"Trick Shot\" also purges <font color='#FF6600'>1 </font> beneficial effect from all targets.<br>Stunned enemies take an additional <font color='#FF3D3D'>%0.0f </font> physical damage when they are damaged by you or your allies.<br>Rooted enemies are dealt <font color='#FF3D3D'>%0.0f </font> physical damage when the root effect expires.<br>Snared enemies and other enemies near them are dealt <font color='#FF3D3D'>%0.0f </font> physical damage every second.<br><br>Against enemies immune to crowd control, one damaging effect is chosen at random.",
             "Params": [
                 "Math.ceil(Math.max(0.312*${s.CombatPower}, 1))",
-                "2.500*${s.CombatPower}+2.500*${s.CombatPower}*${s.PistolAll}",
-                "0.625*${s.CombatPower}+0.625*${s.CombatPower}*${s.PistolAll}"
+                "2.500*${s.CombatPower}*(1 + ${s.PistolAll})",
+                "0.625*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5558,7 +5558,7 @@
             "Name": "Fatal Shot",
             "Description": "Your critical hits with \"Dual Shot\" are more potent, dealing an additional <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.778*${s.CombatPower}+0.778*${s.CombatPower}*${s.PistolAll}"
+                "0.778*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5578,7 +5578,7 @@
             "Name": "Blast Crater",
             "Description": "Your \"Charged Blast\" detonation is so powerful it cause enemies who remain in the blast radius to take <font color='#FF3D3D'>%0.0f </font> physical damage every second they remain in the area. Enemies damaged by this effect have their movement speed slowed.",
             "Params": [
-                "0.117*${s.CombatPower}+0.117*${s.CombatPower}*${s.PistolAll}"
+                "0.117*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5598,7 +5598,7 @@
             "Name": "Bullet Echo",
             "Description": "When your \"Ricochet\" expires you retain traces of the bounding energy for <font color='#FF6600'>4 </font> seconds, causing your Pistol attacks to chain to nearby enemies dealing <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.625*${s.CombatPower}+0.625*${s.CombatPower}*${s.PistolAll}"
+                "0.625*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5618,7 +5618,7 @@
             "Name": "Deadly Dance",
             "Description": "As you execute your \"Bullet Ballet\" your bullets follow your lead and dance from target to target, dealing an additional <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.625*${s.CombatPower}+0.625*${s.CombatPower}*${s.PistolAll}"
+                "0.625*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5656,8 +5656,8 @@
             "Name": "Double Down",
             "Description": "You double down on your Pistol Power Abilities with great intensity. After using a Pistol Power Ability on a target you mark them, causing subsequent Pistol abilities to deal an additional <font color='#FF3D3D'>%0.0f - %0.0f </font> physical damage. The amount of damage increases the longer the target has been marked. Each mark lasts <font color='#FF6600'>8 </font> seconds and only one target can be marked at a time.",
             "Params": [
-                "Math.ceil(Math.max(0.029*${s.CombatPower}+0.029*${s.CombatPower}*${s.PistolAll}, 1))",
-                "Math.ceil(Math.max(0.286*${s.CombatPower}+0.286*${s.CombatPower}*${s.PistolAll}, 1))"
+                "Math.ceil(Math.max(0.029*${s.CombatPower}*(1 + ${s.PistolAll}), 1))",
+                "Math.ceil(Math.max(0.286*${s.CombatPower}*(1 + ${s.PistolAll}), 1))"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5677,8 +5677,8 @@
             "Name": "Beginner's Luck",
             "Description": "<descripton>You instinctively know the best first approach to a target, causing your Pistol abilities to deal an additional <font color='#FF3D3D'>%0.0f - %0.0f </font> physical damage. The damage dealt is at its highest when the target is at maximum health.",
             "Params": [
-                "Math.ceil(Math.max(0.042*${s.CombatPower}+0.042*${s.CombatPower}*${s.PistolAll}, 1))",
-                "Math.ceil(Math.max(0.229*${s.CombatPower}+0.229*${s.CombatPower}*${s.PistolAll}, 1))"
+                "Math.ceil(Math.max(0.042*${s.CombatPower}*(1 + ${s.PistolAll}), 1))",
+                "Math.ceil(Math.max(0.229*${s.CombatPower}*(1 + ${s.PistolAll}), 1))"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5718,7 +5718,7 @@
             "Name": "Flechette Rounds",
             "Description": "When you have a matching set of chambers, your bullets from your Pistol attacks splinter off and inflict <font color='#FF3D3D'>%0.0f </font> physical damage to nearby enemies.",
             "Params": [
-                "0.183*${s.CombatPower}+0.183*${s.CombatPower}*${s.PistolAll}"
+                "0.183*${s.CombatPower}*(1 + ${s.PistolAll})"
             ],
             "Weapon": "Pistol",
             "Type": "Passive",
@@ -5797,7 +5797,7 @@
             "Name": "Full Auto",
             "Description": "<b><i>TAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around the target.<br><br>Consumes <font color='#FF6600'>3 </font> Assault Rifle Energy.<br>Unload a hail of bullets at your target and nearby enemies. Affected targets are hit <font color='#FF6600'>4 </font> times for <font color='#FF3D3D'>%0.0f </font> physical damage each time.<br><br>You have a low chance to load a grenade when using this ability. You will load about <font color='#FF6600'>6 </font> grenades per minute with base energy generation.",
             "Params": [
-                "0.316*${s.CombatPower}+0.316*${s.CombatPower}*${s.RifleAll}+0.316*${s.CombatPower}*${s.RiflePower}+0.316*${s.CombatPower}*${s.AoE}"
+                "0.316*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RiflePower} + ${s.AoE})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -5817,9 +5817,9 @@
             "Name": "High Explosive Grenade",
             "Description": "<b><i>TAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around the target.<br><br>Consumes <font color='#FF6600'>4 </font> Assault Rifle Energy.<br>Blast the target and nearby enemies with a powerful high explosive grenade dealing <font color='#FF3D3D'>%0.0f </font> physical damage. Applies <i>Debilitated</i> and affected targets are stunned for <font color='#FF6600'>3 </font> seconds. Also the area at the targeted point erupts into flames that last <font color='#FF6600'>8 </font> seconds. Every second it will deal <font color='#FF3D3D'>%0.0f </font> physical damage to up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius.<br>If the grenade is fully cooked before launch, the initial blast's damage is improved to <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Requires a grenade to activate.",
             "Params": [
-                "4.640*${s.CombatPower}+4.640*${s.CombatPower}*${s.RifleAll}+4.640*${s.CombatPower}*${s.RifleElite}+4.640*${s.CombatPower}*${s.AoE}",
-                "0.145*${s.CombatPower}+0.145*${s.CombatPower}*${s.RifleAll}+0.145*${s.CombatPower}*${s.RifleElite}+0.145*${s.CombatPower}*${s.AoE}",
-                "9.703*${s.CombatPower}+9.703*${s.CombatPower}*${s.RifleAll}+9.703*${s.CombatPower}*${s.RifleElite}+9.703*${s.CombatPower}*${s.AoE}"
+                "4.640*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RifleElite} + ${s.AoE})",
+                "0.145*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RifleElite} + ${s.AoE})",
+                "9.703*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RifleElite} + ${s.AoE})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -5857,7 +5857,7 @@
             "Name": "Burst Fire",
             "Description": "Consumes <font color='#FF6600'>5 </font> Assault Rifle Energy.<br>Switch your rifle to burst mode and fire at your target, hitting <font color='#FF6600'>3 </font> times, dealing <font color='#FF3D3D'>%0.0f </font> physical damage per hit.<br><br>You have a high chance to load a grenade when using this ability. You will load about <font color='#FF6600'>6 </font> grenades per minute with base energy generation.",
             "Params": [
-                "1.142*${s.CombatPower}+1.142*${s.CombatPower}*${s.RifleAll}+1.142*${s.CombatPower}*${s.RiflePower}"
+                "1.142*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RiflePower})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -5877,7 +5877,7 @@
             "Name": "Placed Shot",
             "Description": "Take aim and fire a single shot at your target dealing <font color='#FF3D3D'>%0.0f </font> physical damage.<br><br>Requires an Assault Rifle in your Primary Weapon slot.",
             "Params": [
-                "1.175*${s.CombatPower}+1.175*${s.CombatPower}*${s.RifleAll}+1.175*${s.CombatPower}*${s.RifleBasic}"
+                "1.175*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RifleBasic})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -5897,7 +5897,7 @@
             "Name": "Red Mist",
             "Description": "Consumes <font color='#FF6600'>4 </font> Assault Rifle Energy.<br>Take aim at your target and fire a powerful shot at their vitals dealing <font color='#FF3D3D'>%0.0f </font> physical damage and slowing its movement.",
             "Params": [
-                "6.975*${s.CombatPower}+6.975*${s.CombatPower}*${s.RifleAll}+6.975*${s.CombatPower}*${s.RifleElite}"
+                "6.975*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RifleElite})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -5917,8 +5917,8 @@
             "Name": "Tactical Retreat",
             "Description": "<b><i>Column Dash:</i></b> Dash backward <font color='#FF6600'>5 </font> metres.<br><br>Consumes <font color='#FF6600'>2 </font> Assault Rifle Energy.<br>Put some distance between you and your enemies by quickly moving backwards.<br>If you have a grenade, the dash distance is increased to <font color='#FF6600'>10 </font> metres and the cooldown time is reduced to <font color='#FF6600'>4 </font> seconds. This cooldown reduction can only happen once every <font color='#FF6600'>15 </font> seconds.<br><br>The grenade is left at the start location, exploding <font color='#FF6600'>1 </font> second after the dash, affecting up to <font color='#FF6600'>6 </font> enemies and dealing <font color='#FF3D3D'>%0.0f </font> physical damage in an area around it. Affected targets have their movement speed slowed by <font color='#FF6600'>70% </font> for <font color='#FF6600'>4 </font> seconds.<br>If the grenade is fully cooked before the dash, the damage dealt is improved to <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "1.660*${s.CombatPower}+1.660*${s.CombatPower}*${s.RifleAll}+1.660*${s.CombatPower}*${s.AoE}",
-                "6.066*${s.CombatPower}+6.066*${s.CombatPower}*${s.RifleAll}+6.066*${s.CombatPower}*${s.AoE}"
+                "1.660*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})",
+                "6.066*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -5938,14 +5938,14 @@
             "Name": "Incendiary Grenade",
             "Description": "<b><i>TAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies in a <font color='#FF6600'>5 </font> metre radius around your target.<br><br>Consumes <font color='#FF6600'>2 </font> Assault Rifle Energy.<br>Launch a grenade filled with a highly potent mixture of thermite and anima dealing <font color='#FF3D3D'>%0.0f </font> physical damage and <font color='#FF3D3D'>%0.0f </font> damage every second for <font color='#FF6600'>8 </font> seconds to the primary target and <font color='#FF3D3D'>%0.0f </font> physical damage and <font color='#FF3D3D'>%0.0f </font> damage every second for <font color='#FF6600'>8 </font> seconds to other enemies in the targeted area. Affected targets are purged of <font color='#FF6600'>1 </font> beneficial effect.<br>If the grenade is fully cooked before launch, the initial damage is improved to <font color='#FF3D3D'>%0.0f </font> / <font color='#FF3D3D'>%0.0f </font> physical damage and the damage over time effect is improved to deal <font color='#FF3D3D'>%0.0f </font> / <font color='#FF3D3D'>%0.0f </font> physical damage every second.<br><br>Requires a grenade to activate.",
             "Params": [
-                "0.207*${s.CombatPower}+0.207*${s.CombatPower}*${s.RifleAll}",
-                "0.233*${s.CombatPower}+0.233*${s.CombatPower}*${s.RifleAll}",
-                "0.104*${s.CombatPower}+0.104*${s.CombatPower}*${s.RifleAll}+0.104*${s.CombatPower}*${s.AoE}",
-                "0.117*${s.CombatPower}+0.117*${s.CombatPower}*${s.RifleAll}+0.117*${s.CombatPower}*${s.AoE}",
-                "0.703*${s.CombatPower}+0.703*${s.CombatPower}*${s.RifleAll}",
-                "0.352*${s.CombatPower}+0.352*${s.CombatPower}*${s.RifleAll}+0.352*${s.CombatPower}*${s.AoE}",
-                "0.791*${s.CombatPower}+0.791*${s.CombatPower}*${s.RifleAll}",
-                "0.396*${s.CombatPower}+0.396*${s.CombatPower}*${s.RifleAll}+0.396*${s.CombatPower}*${s.AoE}"
+                "0.207*${s.CombatPower}*(1 + ${s.RifleAll})",
+                "0.233*${s.CombatPower}*(1 + ${s.RifleAll})",
+                "0.104*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})",
+                "0.117*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})",
+                "0.703*${s.CombatPower}*(1 + ${s.RifleAll})",
+                "0.352*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})",
+                "0.791*${s.CombatPower}*(1 + ${s.RifleAll})",
+                "0.396*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -5965,8 +5965,8 @@
             "Name": "Leeching Ray",
             "Description": "Sap your target's energy with an enervating beam of energy from your rifle. This attack hits <font color='#FF6600'>3 </font> times, dealing <font color='#FF3D3D'>%0.0f </font> physical damage per hit. A portion of the stolen energy heals your defensive target for <font color='#00FF33'>%0.0f </font>, and seeks out and heals the member of your group with the lowest percentage remaining health for the same amount.<br><br>If your Anima Allocation is at least <font color='#FF6600'>51% </font> Healing, you have a very low chance to load a grenade when using this ability, this ability cannot glance, and will not damage a target that has a dungeon reflect shield active.<br><br>Requires an Assault Rifle in your Primary Weapon slot.",
             "Params": [
-                "0.059*${s.CombatPower}+0.059*${s.CombatPower}*${s.RifleAll}+0.059*${s.CombatPower}*${s.RifleBasic}",
-                "0.588*${s.HealPower}+0.588*${s.HealPower}*${s.RifleAll}+0.588*${s.HealPower}*${s.RifleBasic}"
+                "0.059*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RifleBasic})",
+                "0.588*${s.HealPower}*(1 + ${s.RifleAll} + ${s.RifleBasic})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -5986,10 +5986,10 @@
             "Name": "Vital Shot",
             "Description": "Consumes <font color='#FF6600'>6 </font> Assault Rifle Energy.<br>Fire a draining blast of energy at your target dealing <font color='#FF3D3D'>%0.0f </font> physical damage. The drained energy heals your defensive target for <font color='#00FF33'>%0.0f </font> and additionally for <font color='#00FF33'>%0.1f% </font> of the damage dealt.<br><br>If your Anima Allocation is at least <font color='#FF6600'>51% </font> Healing, this ability cannot glance, and when your target has a dungeon reflect shield active it will not damage the target and will instead heal your defensive target for <font color='#00FF33'>%0.0f </font>.<br><br>When used to heal yourself, the amount healed is increased by <font color='#FF6600'>300% </font>.<br><br>You have a low chance to load a grenade when using this ability. You will load about <font color='#FF6600'>6 </font> grenades per minute with base energy generation.",
             "Params": [
-                "0.740*${s.CombatPower}+0.740*${s.CombatPower}*${s.RifleAll}+0.740*${s.CombatPower}*${s.RiflePower}",
-                "2.960*${s.HealPower}+2.960*${s.HealPower}*${s.RifleAll}+2.960*${s.HealPower}*${s.RiflePower}",
-                "((1.263*${s.LeechPower}+1.263*${s.LeechPower}*${s.RifleAll}+1.263*${s.LeechPower}*${s.RiflePower})/100)*100",
-                "3.700*${s.HealPower}+3.700*${s.HealPower}*${s.RifleAll}+3.700*${s.HealPower}*${s.RiflePower}"
+                "0.740*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RiflePower})",
+                "2.960*${s.HealPower}*(1 + ${s.RifleAll} + ${s.RiflePower})",
+                "((1.263*${s.LeechPower}*(1 + ${s.RifleAll} + ${s.RiflePower}))/100)*100",
+                "3.700*${s.HealPower}*(1 + ${s.RifleAll} + ${s.RiflePower})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -6009,7 +6009,7 @@
             "Name": "Anima Suffusion",
             "Description": "<b><i>Channelled:</i></b> Every <font color='#FF6600'>0.3 </font> seconds for <font color='#FF6600'>1.5 </font> seconds.<br><br>Consumes <font color='#FF6600'>4 </font> Assault Rifle Energy.<br>Infuse the target's entire being with anima, healing them for <font color='#00FF33'>%0.0f </font> each interval. While channeling this ability and for <font color='#FF6600'>2.5 </font> seconds after, your target is unable to be killed. When this ability finishes channeling, you gain a beneficial effect which increases the effectiveness of all Assault Rifle healing abilities by <font color='#FF6600'>35% </font> for <font color='#FF6600'>4 </font> seconds.",
             "Params": [
-                "3.805*${s.HealPower}+3.805*${s.HealPower}*${s.RifleAll}+3.805*${s.HealPower}*${s.RifleElite}"
+                "3.805*${s.HealPower}*(1 + ${s.RifleAll} + ${s.RifleElite})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -6047,10 +6047,10 @@
             "Name": "Anima Canister",
             "Description": "Consumes <font color='#FF6600'>2 </font> Assault Rifle Energy.<br>Launch a canister of revitalizing anima at your defensive target healing them for <font color='#00FF33'>%0.0f </font>. The healing energies also spread to your group, healing all group members for <font color='#00FF33'>%0.0f </font>.<br>If the grenade is fully cooked before launch, the defensive target healing is improved to <font color='#00FF33'>%0.0f </font> and the group healing is improved to <font color='#00FF33'>%0.0f </font>.<br><br>Requires a grenade to activate.",
             "Params": [
-                "2.075*${s.HealPower}+2.075*${s.HealPower}*${s.RifleAll}",
-                "0.207*${s.HealPower}+0.207*${s.HealPower}*${s.RifleAll}",
-                "8.183*${s.HealPower}+8.183*${s.HealPower}*${s.RifleAll}",
-                "0.818*${s.HealPower}+0.818*${s.HealPower}*${s.RifleAll}"
+                "2.075*${s.HealPower}*(1 + ${s.RifleAll})",
+                "0.207*${s.HealPower}*(1 + ${s.RifleAll})",
+                "8.183*${s.HealPower}*(1 + ${s.RifleAll})",
+                "0.818*${s.HealPower}*(1 + ${s.RifleAll})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -6070,12 +6070,12 @@
             "Name": "Essence Grenades",
             "Description": "<b><i>TAoE:</i></b> Affects up to <font color='#FF6600'>6 </font> enemies and allies in a <font color='#FF6600'>5 </font> metre radius around your target.<br><br>Consumes <font color='#FF6600'>2 </font> Assault Rifle Energy.<br>Launch a pair of grenades at the target, each one exploding in a burst of energy. One grenade deals <font color='#FF3D3D'>%0.0f </font> physical damage to the primary target, and <font color='#FF3D3D'>%0.0f </font> physical damage to other enemies in the targeted area. Applies <i>Debilitated</i> to all damaged enemies. The other grenade heals friendly targets for <font color='#00FF33'>%0.0f </font>.<br>If the grenade is fully cooked before launch, the damage is improved to <font color='#FF3D3D'>%0.0f </font> / <font color='#FF3D3D'>%0.0f </font> physical damage and the healing is improved to <font color='#00FF33'>%0.0f </font>.<br><br>Requires a grenade to activate.",
             "Params": [
-                "1.517*${s.CombatPower}+1.517*${s.CombatPower}*${s.RifleAll}",
-                "0.207*${s.CombatPower}+0.207*${s.CombatPower}*${s.RifleAll}+0.207*${s.CombatPower}*${s.AoE}",
-                "1.867*${s.HealPower}+1.867*${s.HealPower}*${s.RifleAll}",
-                "1.517*${s.CombatPower}+1.517*${s.CombatPower}*${s.RifleAll}",
-                "0.758*${s.CombatPower}+0.758*${s.CombatPower}*${s.RifleAll}+0.758*${s.CombatPower}*${s.AoE}",
-                "7.364*${s.HealPower}+7.364*${s.HealPower}*${s.RifleAll}"
+                "1.517*${s.CombatPower}*(1 + ${s.RifleAll})",
+                "0.207*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})",
+                "1.867*${s.HealPower}*(1 + ${s.RifleAll})",
+                "1.517*${s.CombatPower}*(1 + ${s.RifleAll})",
+                "0.758*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})",
+                "7.364*${s.HealPower}*(1 + ${s.RifleAll})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -6095,10 +6095,10 @@
             "Name": "Unveil Essence",
             "Description": "Consumes <font color='#FF6600'>10 </font> Assault Rifle Energy.<br>Fire a bolt of energy at the target, revealing their inner essence for all to see. The target is dealt <font color='#FF3D3D'>%0.0f </font> physical damage and your group is healed for <font color='#00FF33'>%0.0f </font>. The target's essence becomes available for your group to steal for <font color='#FF6600'>6 </font> seconds causing group members who attacks them to be healed for <font color='#00FF33'>%0.1f% </font> of the damage dealt.<br><br>If your Anima Allocation is at least <font color='#FF6600'>51% </font> Healing, this ability cannot glance, and when your target has a dungeon reflect shield active it will not damage the target and will instead heal your group for <font color='#00FF33'>%0.0f </font>.<br><br>You have a high chance to load a grenade when using this ability. You will load about <font color='#FF6600'>6 </font> grenades per minute with base energy generation.",
             "Params": [
-                "0.803*${s.CombatPower}+0.803*${s.CombatPower}*${s.RifleAll}+0.803*${s.CombatPower}*${s.RiflePower}",
-                "2.408*${s.HealPower}+2.408*${s.HealPower}*${s.RifleAll}+2.408*${s.HealPower}*${s.RiflePower}",
+                "0.803*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.RiflePower})",
+                "2.408*${s.HealPower}*(1 + ${s.RifleAll} + ${s.RiflePower})",
                 "((0.103*${s.LeechPower})/100*100)",
-                "4.012*${s.HealPower}+4.012*${s.HealPower}*${s.RifleAll}+4.012*${s.HealPower}*${s.RiflePower}"
+                "4.012*${s.HealPower}*(1 + ${s.RifleAll} + ${s.RiflePower})"
             ],
             "Weapon": "Rifle",
             "Type": "Active",
@@ -6228,8 +6228,8 @@
             "Name": "Withdrawal",
             "Description": "Your \"Tactical Retreat\" grants you better positioning. When used you always dash <font color='#FF6600'>10 </font> metres. In addition, when you leave a grenade the damage is increased to <font color='#FF3D3D'>%0.0f </font> physical damage or <font color='#FF3D3D'>%0.0f </font> physical damage for fully cooked grenades.",
             "Params": [
-                "2.557*${s.CombatPower}+2.557*${s.CombatPower}*${s.RifleAll}+2.557*${s.CombatPower}*${s.AoE}",
-                "6.523*${s.CombatPower}+6.523*${s.CombatPower}*${s.RifleAll}+6.523*${s.CombatPower}*${s.AoE}"
+                "2.557*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})",
+                "6.523*${s.CombatPower}*(1 + ${s.RifleAll} + ${s.AoE})"
             ],
             "Weapon": "Rifle",
             "Type": "Passive",
@@ -6249,7 +6249,7 @@
             "Name": "Lingering Essence",
             "Description": "Your \"Essence Grenades\" leave a lingering mist of restorative energy, healing allies in the area for <font color='#00FF33'>%0.0f </font> every second for <font color='#FF6600'>5 </font> seconds.",
             "Params": [
-                "0.179*${s.HealPower}+0.179*${s.HealPower}*${s.RifleAll}"
+                "0.179*${s.HealPower}*(1 + ${s.RifleAll})"
             ],
             "Weapon": "Rifle",
             "Type": "Passive",
@@ -6379,7 +6379,7 @@
             "Name": "Explosives Expert",
             "Description": "Your skill with explosives allows you to increase the fuse time on your grenades to <font color='#FF6600'>9 </font> seconds. Also, your grenades are now fully cooked when they have <font color='#FF6600'>7 </font> seconds remaining before detonating. If a grenade detonates before you are able to launch it, you are no longer harmed by the blast and nearby enemies are dealt <font color='#FF3D3D'>%0.0f </font> physical damage.",
             "Params": [
-                "0.897*${s.CombatPower}+0.897*${s.CombatPower}*${s.RifleAll}"
+                "0.897*${s.CombatPower}*(1 + ${s.RifleAll})"
             ],
             "Weapon": "Rifle",
             "Type": "Passive",
@@ -6473,7 +6473,7 @@
             "Name": "Secondary Explosion",
             "Description": "You pack additional timed explosives into your grenade abilities. These explosives detonate <font color='#FF6600'>1.5 </font> seconds after you launch your grenade dealing <font color='#FF3D3D'>%0.0f </font> physical damage to enemies within <font color='#FF6600'>2 </font> metres of the original target.",
             "Params": [
-                "0.897*${s.CombatPower}+0.897*${s.CombatPower}*${s.RifleAll}"
+                "0.897*${s.CombatPower}*(1 + ${s.RifleAll})"
             ],
             "Weapon": "Rifle",
             "Type": "Passive",
