@@ -1,6 +1,6 @@
 # Skillhive
 Deck builder for Secret World Legends  
-[Live](https://skillhive.buzz) or [Backup](http://makemodding.github.io/SkillHive)  
+[Live](https://skillhive.buzz) or [Backup](https://makemods.github.io/SkillHive)  
 
 
 ### Licence
